@@ -1,36 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shelter - Main</title>
-  <link rel="stylesheet" href="main.css">
-  <script type="module" src="main.js"></script>
-</head>
-<body>
-  <div class="start-screen-wrapper">
-    <div class="section section--dark">
-      <header class="header">
-        <nav class="navbar">
-          <div class="navbar__logo logo">
-            <h1 class="logo__title">Cozy House</h1>
-            <p class="logo__subtitle">Shelter for pets in Boston</p>
-          </div>
-          <div class="navbar__burger"></div>
-          <ul class="navbar__menu navmenu">
-            <li class="navmenu__item"><a href="#" class="navmenu__link navmenu__link--active">About the shelter</a></li>
-            <li class="navmenu__item"><a href="../pets/pets.html" class="navmenu__link">Our pets</a>
-            </li>
-            <li class="navmenu__item"><a href="#help" class="navmenu__link">Help the shelter</a></li>
-            <li class="navmenu__item"><a href="#contacts" class="navmenu__link">Contacts</a></li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shelter - Main</title>
+    <link rel="stylesheet" href="main.css" />
+    <script type="module" src="main.js"></script>
+  </head>
+  <body>
+    <div class="start-screen-wrapper">
+      <div class="section section--dark">
+        <header class="header" id="header">
+          <nav class="navbar">
+            <div class="navbar__logo logo">
+              <h1 class="logo__title">Cozy House</h1>
+              <p class="logo__subtitle">Shelter for pets in Boston</p>
+            </div>
+            <div class="navbar__burger"></div>
+            <ul class="navbar__menu navmenu">
+              <li class="navmenu__item">
+                <a href="#" class="navmenu__link navmenu__link--active"
+                  >About the shelter</a
+                >
+              </li>
+              <li class="navmenu__item">
+                <a href="../pets/pets.html" class="navmenu__link">Our pets</a>
+              </li>
+              <li class="navmenu__item">
+                <a href="#help" class="navmenu__link">Help the shelter</a>
+              </li>
+              <li class="navmenu__item">
+                <a href="#contacts" class="navmenu__link">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
 
-    <div class="start-screen"></div>
-  </div>
-  
-</body>
+      <div class="section section--dark" id="not-only">
+        <div class="content">
+          <h2 class="heading h2">
+            Not only people<br />
+            need a house
+          </h2>
+          <p class="text p-l"
+            >We offer to give a chance to a little and nice puppy with an
+            extremely wide and open heart. He or she will love you more than
+            anybody else in the world, you will see!</p
+          >
+          <a href="#our-friends" class="button button--primary"
+            >Make a friend</a
+          >
+        </div>
+        <div class="picture">
+          <img
+            src="../../assets/images/start-screen-puppy.png"
+            alt="start-screen-puppy"
+          />
+        </div>
+      </div>
+      <div class="start-screen"></div>
+    </div>
+  </body>
 </html>

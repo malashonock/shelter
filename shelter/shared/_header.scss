@@ -57,6 +57,7 @@
   &__link {
     @extend .p-l;
     color: $color-dark-l;
+    @include hover-transition(color);
 
     &--active {
       color: $color-dark-3xl;
@@ -71,6 +72,11 @@
         background-color: $color-primary;
       }
     }
+
+    &:hover {
+      color: $color-dark-3xl;
+      @include hover-transition(color);
+    }
   }
 }
 
@@ -78,6 +84,7 @@
 .section--dark {
   .header {
     padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .logo {
@@ -97,13 +104,19 @@
       &--active {
         color: $color-light-s;
       }
+
+      &:hover {
+        color: $color-light-s;
+      }
     }
   }
 }
 
 @media (max-width: 1279px) {
-  .header {
-    padding-top: 30px;
+  .section--dark {
+    .header {
+      padding-top: 30px;
+    }
   }
 }
 

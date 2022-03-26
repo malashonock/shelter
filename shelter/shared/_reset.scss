@@ -10,6 +10,13 @@ p {
   margin: 0;
 }
 
+img {
+  display: block; /* Remove margin from images */
+  // fit size of containing div
+  max-width: 100%;
+  max-height: 100%;
+}
+
 a {
   text-decoration: none;
 }

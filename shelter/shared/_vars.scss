@@ -10,3 +10,7 @@ $color-primary-light: #fddcc4;
 $color-light-s: #fafafa;
 $color-light-l: #f6f6f6;
 $color-light-xl: #ffffff;
+
+@mixin hover-transition($property) {
+  transition: $property 0.2s ease;
+}

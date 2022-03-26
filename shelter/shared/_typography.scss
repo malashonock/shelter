@@ -55,47 +55,51 @@
 }
 
 .h-base {
-  font-family: "Georgia";
+  font-family: "Georgia", serif;
   font-style: normal;
   font-weight: normal;
+  letter-spacing: 0.06em;
 }
 
 .h1 {
   @extend .h-base;
   font-size: 32px;
   line-height: 110%; /* or 35px */
-  letter-spacing: 0.06em;
 }
 
 .h2 {
   @extend .h-base;
   font-size: 44px;
   line-height: 130%; /* or 57px */
+  letter-spacing: 0;
 }
 
 .h3 {
   @extend .h-base;
   font-size: 35px;
   line-height: 130%; /* or 45px */
-  letter-spacing: 0.06em;
 }
 
 .h4 {
   @extend .h-base;
   font-size: 20px;
   line-height: 115%; /* identical to box height, or 23px */
-  letter-spacing: 0.06em;
 }
 
 .h5 {
   @extend .h-base;
   font-size: 15px;
   line-height: 110%; /* identical to box height, or 17px */
-  letter-spacing: 0.06em;
+}
+
+.button {
+  @extend .h-base;
+  font-size: 17px;
+  line-height: 130%; /* identical to box height, or 22px */
 }
 
 .p-base {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-weight: normal;
 }
 
@@ -112,4 +116,11 @@
   font-style: italic;
   font-size: 12px;
   line-height: 150%; /* identical to box height, or 18px */
+}
+
+@media (max-width: 767px) {
+  .h2 {
+    font-size: 25px;
+    letter-spacing: 0.06em;
+  }
 }

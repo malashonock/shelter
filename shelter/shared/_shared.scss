@@ -2,6 +2,10 @@
 @use "typography";
 @use "vars";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .section {
   width: 100%;
   margin: 0 auto;

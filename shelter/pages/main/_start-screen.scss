@@ -1,6 +1,73 @@
+@use "../../shared/vars" as *;
+
 .start-screen-wrapper {
   background: url("../../assets/images/noise_transparent@2x.png"),
     radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%)
       /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
     #211f20;
+}
+
+#not-only {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .content {
+    margin-top: 163px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 42px;
+
+    .heading {
+      color: $color-light-xl;
+    }
+
+    .text {
+      color: $color-dark-s;
+    }
+  }
+
+  .picture {
+    max-width: 698px;
+  }
+}
+
+@media (max-width: 1279px) {
+  #not-only {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .content {
+      margin-top: 0;
+
+      .button {
+        align-self: center;
+      }
+    }
+
+    .picture {
+      align-self: flex-end;
+      margin-top: 100px;
+      max-width: 569px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #not-only {
+    .content {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .picture {
+      margin-top: 105px;
+      max-width: 260px;
+    }
+  }
 }
