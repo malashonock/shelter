@@ -480,6 +480,10 @@ a {
     font-size: 25px;
     letter-spacing: 0.06em;
   }
+
+  .h3 {
+    font-size: 25px;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -662,7 +666,7 @@ html {
   justify-content: space-between;
   align-items: flex-start;
 }
-#not-only .content {
+#not-only .text-block {
   margin-top: 163px;
   max-width: 460px;
   display: flex;
@@ -670,10 +674,10 @@ html {
   align-items: flex-start;
   row-gap: 42px;
 }
-#not-only .content .title {
+#not-only .text-block__title {
   color: #ffffff;
 }
-#not-only .content .text {
+#not-only .text-block__text {
   color: #cdcdcd;
 }
 #not-only .picture {
@@ -686,10 +690,10 @@ html {
     justify-content: flex-start;
     align-items: center;
   }
-  #not-only .content {
+  #not-only .text-block {
     margin-top: 0;
   }
-  #not-only .content .button {
+  #not-only .text-block .button {
     align-self: center;
   }
   #not-only .picture {
@@ -699,7 +703,7 @@ html {
   }
 }
 @media (max-width: 767px) {
-  #not-only .content {
+  #not-only .text-block {
     width: 100%;
     align-items: center;
     text-align: center;
@@ -707,5 +711,74 @@ html {
   #not-only .picture {
     margin-top: 105px;
     max-width: 260px;
+  }
+}
+#about .content {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
+  max-width: 850px;
+}
+#about .picture {
+  min-width: 300px;
+}
+#about .text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 25px;
+}
+#about .text-block__title {
+  color: #545454;
+}
+#about .text-block__text {
+  color: #4c4c4c;
+}
+
+@media (max-width: 1279px) {
+  #about .content {
+    max-width: 437px;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 80px;
+  }
+  #about .content .text-block {
+    padding: 0 3.5px;
+  }
+}
+@media (max-width: 767px) {
+  #about .content {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    max-width: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 42px;
+  }
+  #about .content .text-block {
+    padding: 0 15px;
+    align-items: center;
+    row-gap: 22px;
+  }
+  #about .content .text-block__title {
+    text-align: center;
+    margin-bottom: 3px;
+  }
+  #about .content .text-block__text {
+    text-align: justify;
+  }
+  #about .content .picture {
+    padding: 0 20px;
   }
 }/*# sourceMappingURL=main.css.map */

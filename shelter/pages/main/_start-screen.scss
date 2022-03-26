@@ -6,7 +6,7 @@
   justify-content: space-between;
   align-items: flex-start;
 
-  .content {
+  .text-block {
     margin-top: 163px;
     max-width: 460px;
     display: flex;
@@ -14,11 +14,11 @@
     align-items: flex-start;
     row-gap: 42px;
 
-    .title {
+    &__title {
       color: $color-light-xl;
     }
 
-    .text {
+    &__text {
       color: $color-dark-s;
     }
   }
@@ -34,7 +34,7 @@
     justify-content: flex-start;
     align-items: center;
 
-    .content {
+    .text-block {
       margin-top: 0;
 
       .button {
@@ -52,7 +52,7 @@
 
 @media (max-width: 767px) {
   #not-only {
-    .content {
+    .text-block {
       width: 100%;
       align-items: center;
       text-align: center;

@@ -480,6 +480,10 @@ a {
     font-size: 25px;
     letter-spacing: 0.06em;
   }
+
+  .h3 {
+    font-size: 25px;
+  }
 }
 html {
   scroll-behavior: smooth;
