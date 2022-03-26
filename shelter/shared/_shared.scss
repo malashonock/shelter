@@ -1,0 +1,24 @@
+@use "reset";
+@use "typography";
+@use "vars";
+
+.section {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+  padding: 0 40px;
+}
+
+@media (max-width: 1279px) {
+  .section {
+    max-width: 768px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    max-width: 320px;
+    padding: 0 10px;
+  }
+}
