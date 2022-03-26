@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.button {
+  cursor: pointer;
+}
+
 .section {
   width: 100%;
   background-color: $color-light-xl;

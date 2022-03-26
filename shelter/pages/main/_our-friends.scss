@@ -1,0 +1,40 @@
+@use "../../shared/vars" as *;
+
+#our-friends {
+  .content-wrapper {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 60px;
+  }
+
+  .title {
+    text-align: center;
+    color: $color-dark-l;
+  }
+
+  .slider {
+    /* Remove after embedding swiper.js */
+    background-color: red;
+    width: 100%;
+    height: 435px;
+  }
+}
+
+@media (max-width: 767px) {
+  #our-friends {
+    .content-wrapper {
+      padding-top: 42px;
+      padding-bottom: 42px;
+      row-gap: 42px;
+    }
+
+    .slider {
+      /* Remove after embedding swiper.js */
+      height: 507px;
+    }
+  }
+}

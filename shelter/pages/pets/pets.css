@@ -355,6 +355,10 @@ img {
   max-height: 100%;
 }
 
+button {
+  border-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -487,6 +491,10 @@ a {
 }
 html {
   scroll-behavior: smooth;
+}
+
+.button {
+  cursor: pointer;
 }
 
 .section {

@@ -1,7 +1,7 @@
 @use "../../shared/vars" as *;
 
 #about {
-  .content {
+  .content-wrapper {
     padding-top: 80px;
     padding-bottom: 100px;
     margin: 0 auto;
@@ -36,7 +36,7 @@
 
 @media (max-width: 1279px) {
   #about {
-    .content {
+    .content-wrapper {
       max-width: 437px;
       flex-direction: column-reverse;
       justify-content: flex-start;
@@ -52,7 +52,7 @@
 
 @media (max-width: 767px) {
   #about {
-    .content {
+    .content-wrapper {
       padding-top: 42px;
       padding-bottom: 42px;
       max-width: 100%;

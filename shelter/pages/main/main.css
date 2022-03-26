@@ -355,6 +355,10 @@ img {
   max-height: 100%;
 }
 
+button {
+  border-style: none;
+}
+
 a {
   text-decoration: none;
 }
@@ -487,6 +491,10 @@ a {
 }
 html {
   scroll-behavior: smooth;
+}
+
+.button {
+  cursor: pointer;
 }
 
 .section {
@@ -713,7 +721,7 @@ html {
     max-width: 260px;
   }
 }
-#about .content {
+#about .content-wrapper {
   padding-top: 80px;
   padding-bottom: 100px;
   margin: 0 auto;
@@ -743,7 +751,7 @@ html {
 }
 
 @media (max-width: 1279px) {
-  #about .content {
+  #about .content-wrapper {
     max-width: 437px;
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -751,12 +759,12 @@ html {
          column-gap: 0;
     row-gap: 80px;
   }
-  #about .content .text-block {
+  #about .content-wrapper .text-block {
     padding: 0 3.5px;
   }
 }
 @media (max-width: 767px) {
-  #about .content {
+  #about .content-wrapper {
     padding-top: 42px;
     padding-bottom: 42px;
     max-width: 100%;
@@ -766,19 +774,50 @@ html {
          column-gap: 0;
     row-gap: 42px;
   }
-  #about .content .text-block {
+  #about .content-wrapper .text-block {
     padding: 0 15px;
     align-items: center;
     row-gap: 22px;
   }
-  #about .content .text-block__title {
+  #about .content-wrapper .text-block__title {
     text-align: center;
     margin-bottom: 3px;
   }
-  #about .content .text-block__text {
+  #about .content-wrapper .text-block__text {
     text-align: justify;
   }
-  #about .content .picture {
+  #about .content-wrapper .picture {
     padding: 0 20px;
+  }
+}
+#our-friends .content-wrapper {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  row-gap: 60px;
+}
+#our-friends .title {
+  text-align: center;
+  color: #545454;
+}
+#our-friends .slider {
+  /* Remove after embedding swiper.js */
+  background-color: red;
+  width: 100%;
+  height: 435px;
+}
+
+@media (max-width: 767px) {
+  #our-friends .content-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
+    row-gap: 42px;
+  }
+  #our-friends .slider {
+    /* Remove after embedding swiper.js */
+    height: 507px;
   }
 }/*# sourceMappingURL=main.css.map */
