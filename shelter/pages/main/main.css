@@ -459,12 +459,12 @@ a {
   /* identical to box height, or 22px */
 }
 
-.p-base, .logo__subtitle, .p-s, .p-l, .navmenu__link {
+.p-base, .logo__subtitle, .p-s, .p-l, .navmenu__link, .navmenu__link--active {
   font-family: "Arial", sans-serif;
   font-weight: normal;
 }
 
-.p-l, .navmenu__link {
+.p-l, .navmenu__link, .navmenu__link--active {
   font-style: normal;
   font-size: 15px;
   line-height: 160%;
@@ -497,14 +497,16 @@ html {
   cursor: pointer;
 }
 
-.section {
+.section, .section--dark, .section--shaded, .section--light {
   width: 100%;
-  background-color: #ffffff;
 }
 .section__content {
   margin: 0 auto;
   width: 100%;
   max-width: 1200px;
+}
+.section--light {
+  background-color: #ffffff;
 }
 .section--shaded {
   background-color: #f6f6f6;
@@ -569,7 +571,7 @@ html {
 .navmenu__item {
   position: relative;
 }
-.navmenu__link {
+.navmenu__link, .navmenu__link--active {
   color: #545454;
   transition: color 0.2s ease;
 }
@@ -585,7 +587,7 @@ html {
   height: 3px;
   background-color: #f1cdb3;
 }
-.navmenu__link:hover {
+.navmenu__link:hover, .navmenu__link--active:hover {
   color: #292929;
   transition: color 0.2s ease;
 }
@@ -600,13 +602,13 @@ html {
 .section--dark .logo__subtitle {
   color: #ffffff;
 }
-.section--dark .navmenu__link {
+.section--dark .navmenu__link, .section--dark .navmenu__link--active {
   color: #cdcdcd;
 }
 .section--dark .navmenu__link--active {
   color: #fafafa;
 }
-.section--dark .navmenu__link:hover {
+.section--dark .navmenu__link:hover, .section--dark .navmenu__link--active:hover {
   color: #fafafa;
 }
 

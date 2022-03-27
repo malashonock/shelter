@@ -58,6 +58,7 @@
     @include hover-transition(color);
 
     &--active {
+      @extend .navmenu__link;
       color: $color-dark-3xl;
 
       &::after {
