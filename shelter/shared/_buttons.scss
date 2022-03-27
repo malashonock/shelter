@@ -5,12 +5,16 @@
   border-radius: 100px;
   color: $color-dark-3xl;
   @include hover-transition(background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &--primary {
     background-color: $color-primary;
   }
 
   &--secondary {
+    background-color: transparent;
     border: 2px solid $color-primary;
   }
 

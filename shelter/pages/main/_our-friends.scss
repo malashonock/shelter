@@ -1,4 +1,5 @@
 @use "../../shared/vars" as *;
+@use "../../shared/slider";
 
 #our-friends {
   .content-wrapper {
@@ -17,10 +18,24 @@
   }
 
   .slider {
-    /* Remove after embedding swiper.js */
-    background-color: red;
-    width: 100%;
-    height: 435px;
+    &__wrapper {
+      max-width: 990px;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  #our-friends {
+    .slider {
+      &__wrapper {
+        max-width: 580px;
+      }
+
+      /* Remove after embedding swiper.js */
+      &__slide:nth-of-type(3) {
+        display: none;
+      }
+    }
   }
 }
 
@@ -34,7 +49,24 @@
 
     .slider {
       /* Remove after embedding swiper.js */
-      height: 507px;
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 20px;
+      column-gap: 80px;
+
+      &__wrapper {
+        order: 1;
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+
+      &__slide:nth-of-type(2) {
+        display: none;
+      }
+
+      &__nav-button {
+        order: 2;
+      }
     }
   }
 }

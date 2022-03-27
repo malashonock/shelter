@@ -1,0 +1,64 @@
+@use "vars" as *;
+@use "typography";
+
+.slider {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 0;
+  }
+
+  &__nav-button {
+    padding: 0;
+    width: 52px;
+    height: 52px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    &--prev {
+      background-image: url("../assets/icons/arrow-left.png");
+    }
+
+    &--next {
+      background-image: url("../assets/icons/arrow-right.png");
+    }
+  }
+}
+
+.card {
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: $color-light-s;
+  @include hover-transition(background-color);
+  @include hover-transition(filter);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-light-xl;
+    filter: drop-shadow(0 0 3px $color-dark-s);
+    @include hover-transition(background-color);
+    @include hover-transition(filter);
+  }
+
+  &__title {
+    @extend .h4;
+    color: $color-dark-l;
+  }
+}
