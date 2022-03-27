@@ -503,9 +503,8 @@ html {
 }
 .section__content {
   margin: 0 auto;
-  padding: 0 40px;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1200px;
 }
 .section--shaded {
   background-color: #f6f6f6;
@@ -516,14 +515,12 @@ html {
 
 @media (max-width: 1279px) {
   .section__content {
-    max-width: 768px;
-    padding: 0 30px;
+    max-width: 708px;
   }
 }
 @media (max-width: 767px) {
   .section__content {
-    max-width: 320px;
-    padding: 0 10px;
+    max-width: 300px;
   }
 }
 .navbar {
