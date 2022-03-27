@@ -459,12 +459,12 @@ a {
   /* identical to box height, or 22px */
 }
 
-.p-base, .logo__subtitle, .p-s, .p-l, .navmenu__link, .navmenu__link--active {
+.p-base, .logo__subtitle, .p-s, .p-l, .navmenu__link {
   font-family: "Arial", sans-serif;
   font-weight: normal;
 }
 
-.p-l, .navmenu__link, .navmenu__link--active {
+.p-l, .navmenu__link {
   font-style: normal;
   font-size: 15px;
   line-height: 160%;
@@ -497,7 +497,7 @@ html {
   cursor: pointer;
 }
 
-.section, .section--dark, .section--shaded, .section--light {
+.section {
   width: 100%;
 }
 .section__content {
@@ -571,7 +571,7 @@ html {
 .navmenu__item {
   position: relative;
 }
-.navmenu__link, .navmenu__link--active {
+.navmenu__link {
   color: #545454;
   transition: color 0.2s ease;
 }
@@ -587,7 +587,7 @@ html {
   height: 3px;
   background-color: #f1cdb3;
 }
-.navmenu__link:hover, .navmenu__link--active:hover {
+.navmenu__link:hover {
   color: #292929;
   transition: color 0.2s ease;
 }
@@ -602,13 +602,13 @@ html {
 .section--dark .logo__subtitle {
   color: #ffffff;
 }
-.section--dark .navmenu__link, .section--dark .navmenu__link--active {
+.section--dark .navmenu__link {
   color: #cdcdcd;
 }
 .section--dark .navmenu__link--active {
   color: #fafafa;
 }
-.section--dark .navmenu__link:hover, .section--dark .navmenu__link--active:hover {
+.section--dark .navmenu__link:hover {
   color: #fafafa;
 }
 

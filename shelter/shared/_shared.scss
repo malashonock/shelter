@@ -20,17 +20,14 @@ html {
   }
 
   &--light {
-    @extend .section;
     background-color: $color-light-xl;
   }
 
   &--shaded {
-    @extend .section;
     background-color: $color-light-l;
   }
 
   &--dark {
-    @extend .section;
     background: url("../../assets/images/noise_transparent@2x.png"),
       radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
