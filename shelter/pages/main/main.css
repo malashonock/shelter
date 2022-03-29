@@ -841,12 +841,6 @@ html {
   flex-grow: 0;
   flex-shrink: 0;
 }
-.slider__nav-button--prev {
-  background-image: url("../assets/icons/arrow-left.png");
-}
-.slider__nav-button--next {
-  background-image: url("../assets/icons/arrow-right.png");
-}
 
 #our-friends .content-wrapper {
   padding-top: 80px;
@@ -863,6 +857,12 @@ html {
 }
 #our-friends .slider__wrapper {
   max-width: 990px;
+}
+#our-friends .slider__nav-button--prev {
+  background-image: url("../assets/icons/arrow-left.png");
+}
+#our-friends .slider__nav-button--next {
+  background-image: url("../assets/icons/arrow-right.png");
 }
 
 @media (max-width: 1279px) {

@@ -26,13 +26,5 @@
     background-repeat: no-repeat;
     flex-grow: 0;
     flex-shrink: 0;
-
-    &--prev {
-      background-image: url("../assets/icons/arrow-left.png");
-    }
-
-    &--next {
-      background-image: url("../assets/icons/arrow-right.png");
-    }
   }
 }
