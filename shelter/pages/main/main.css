@@ -338,6 +338,10 @@ template {
   display: none;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -363,8 +367,14 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  -webkit-margin-before: 0;
+          margin-block-start: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
 }
 
 @font-face {
@@ -515,6 +525,12 @@ html {
   background: url("../../assets/images/noise_transparent@2x.png"), radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
 }
 
+.content-wrapper {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1279px) {
   .section__content {
     max-width: 708px;
@@ -523,6 +539,11 @@ html {
 @media (max-width: 767px) {
   .section__content {
     max-width: 300px;
+  }
+
+  .content-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
   }
 }
 .navbar {
@@ -565,7 +586,6 @@ html {
   align-items: center;
   -moz-column-gap: 35px;
        column-gap: 35px;
-  list-style: none;
   padding: 0;
 }
 .navmenu__item {
@@ -672,19 +692,17 @@ html {
 }
 
 .card {
-  height: 435px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  background-color: #fafafa;
-  transition: background-color 0.2s ease;
-  transition: filter 0.2s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 }
-.card:hover {
+.card--interactive {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  transition: filter 0.2s ease;
+}
+.card--interactive:hover {
   background-color: #ffffff;
   filter: drop-shadow(0 0 3px #cdcdcd);
   transition: background-color 0.2s ease;
@@ -748,9 +766,6 @@ html {
   }
 }
 #about .content-wrapper {
-  padding-top: 80px;
-  padding-bottom: 100px;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -791,8 +806,6 @@ html {
 }
 @media (max-width: 767px) {
   #about .content-wrapper {
-    padding-top: 42px;
-    padding-bottom: 42px;
     max-width: 100%;
     flex-direction: column-reverse;
     justify-content: flex-start;
@@ -842,9 +855,11 @@ html {
   flex-shrink: 0;
 }
 
+#our-friends {
+  /* Slider configuration */
+  /* Card configuration */
+}
 #our-friends .content-wrapper {
-  padding-top: 80px;
-  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -864,8 +879,17 @@ html {
 #our-friends .slider__nav-button--next {
   background-image: url("../assets/icons/arrow-right.png");
 }
+#our-friends .card {
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: #fafafa;
+}
 
 @media (max-width: 1279px) {
+  #our-friends {
+    /* Slider configuration */
+  }
   #our-friends .slider {
     /* Remove after embedding swiper.js */
   }
@@ -877,9 +901,10 @@ html {
   }
 }
 @media (max-width: 767px) {
+  #our-friends {
+    /* Slider configuration */
+  }
   #our-friends .content-wrapper {
-    padding-top: 42px;
-    padding-bottom: 42px;
     row-gap: 42px;
   }
   #our-friends .slider {
@@ -900,5 +925,62 @@ html {
   }
   #our-friends .slider__nav-button {
     order: 2;
+  }
+}
+#help .content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 60px;
+}
+#help .title {
+  color: #545454;
+  text-align: center;
+}
+#help .help-list {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  row-gap: 55px;
+  -moz-column-gap: 120px;
+       column-gap: 120px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#help .card {
+  height: 113px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+@media (max-width: 1279px) {
+  #help .help-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    -moz-column-gap: 60px;
+         column-gap: 60px;
+  }
+  #help .card {
+    width: 170px;
+  }
+}
+@media (max-width: 767px) {
+  #help .content-wrapper {
+    row-gap: 42px;
+  }
+  #help .help-list {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+    -moz-column-gap: 30px;
+         column-gap: 30px;
+  }
+  #help .card {
+    width: 130px;
+    height: 87px;
+  }
+  #help .card__title {
+    font-size: 15px;
+    line-height: 110%;
   }
 }/*# sourceMappingURL=main.css.map */

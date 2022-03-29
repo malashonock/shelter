@@ -1,5 +1,9 @@
 @use "normalize";
 
+* {
+  box-sizing: border-box;
+}
+
 h1,
 h2,
 h3,
@@ -25,6 +29,9 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
 }

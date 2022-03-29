@@ -35,6 +35,12 @@ html {
   }
 }
 
+.content-wrapper {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
 @media (max-width: 1279px) {
   .section {
     &__content {
@@ -48,5 +54,10 @@ html {
     &__content {
       max-width: 300px;
     }
+  }
+
+  .content-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
   }
 }

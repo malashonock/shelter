@@ -2,23 +2,22 @@
 @use "typography";
 
 .card {
-  height: 435px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  background-color: $color-light-s;
-  @include hover-transition(background-color);
-  @include hover-transition(filter);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  cursor: pointer;
 
-  &:hover {
-    background-color: $color-light-xl;
-    filter: drop-shadow(0 0 3px $color-dark-s);
+  &--interactive {
+    cursor: pointer;
     @include hover-transition(background-color);
     @include hover-transition(filter);
+
+    &:hover {
+      background-color: $color-light-xl;
+      filter: drop-shadow(0 0 3px $color-dark-s);
+      @include hover-transition(background-color);
+      @include hover-transition(filter);
+    }
   }
 
   &__title {

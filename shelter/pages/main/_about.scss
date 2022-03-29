@@ -2,9 +2,6 @@
 
 #about {
   .content-wrapper {
-    padding-top: 80px;
-    padding-bottom: 100px;
-    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -53,8 +50,6 @@
 @media (max-width: 767px) {
   #about {
     .content-wrapper {
-      padding-top: 42px;
-      padding-bottom: 42px;
       max-width: 100%;
       flex-direction: column-reverse;
       justify-content: flex-start;

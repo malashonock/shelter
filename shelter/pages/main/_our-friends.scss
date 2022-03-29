@@ -3,8 +3,6 @@
 
 #our-friends {
   .content-wrapper {
-    padding-top: 80px;
-    padding-bottom: 100px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -17,6 +15,7 @@
     color: $color-dark-l;
   }
 
+  /* Slider configuration */
   .slider {
     &__wrapper {
       max-width: 990px;
@@ -32,10 +31,19 @@
       }
     }
   }
+
+  /* Card configuration */
+  .card {
+    height: 435px;
+    padding-bottom: 30px;
+    border-radius: 9px;
+    background-color: $color-light-s;
+  }
 }
 
 @media (max-width: 1279px) {
   #our-friends {
+    /* Slider configuration */
     .slider {
       &__wrapper {
         max-width: 580px;
@@ -52,11 +60,10 @@
 @media (max-width: 767px) {
   #our-friends {
     .content-wrapper {
-      padding-top: 42px;
-      padding-bottom: 42px;
       row-gap: 42px;
     }
 
+    /* Slider configuration */
     .slider {
       /* Remove after embedding swiper.js */
       flex-wrap: wrap;
