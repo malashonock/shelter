@@ -415,7 +415,7 @@ a {
   font-weight: bold;
   src: url(../assets/fonts/arial/arialbi.ttf);
 }
-.h-base, .button, .h5, .h4, .h3, .h2, .h1, .logo__title {
+.h-base, .button, .h5, .h4, .card__title, .h3, .h2, .h1, .logo__title {
   font-family: "Georgia", serif;
   font-style: normal;
   font-weight: normal;
@@ -441,7 +441,7 @@ a {
   /* or 45px */
 }
 
-.h4 {
+.h4, .card__title {
   font-size: 20px;
   line-height: 115%;
   /* identical to box height, or 23px */
@@ -649,4 +649,26 @@ html {
   .section--dark .navbar__burger, .section--dark .navbar__burger::before, .section--dark .navbar__burger::after {
     background-color: #f1cdb3;
   }
+}
+.card {
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: #fafafa;
+  transition: background-color 0.2s ease;
+  transition: filter 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 3px #cdcdcd);
+  transition: background-color 0.2s ease;
+  transition: filter 0.2s ease;
+}
+.card__title {
+  color: #545454;
 }/*# sourceMappingURL=pets.css.map */

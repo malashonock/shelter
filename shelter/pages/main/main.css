@@ -671,6 +671,29 @@ html {
   transition: background-color 0.2s ease;
 }
 
+.card {
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: #fafafa;
+  transition: background-color 0.2s ease;
+  transition: filter 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.card:hover {
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 3px #cdcdcd);
+  transition: background-color 0.2s ease;
+  transition: filter 0.2s ease;
+}
+.card__title {
+  color: #545454;
+}
+
 #not-only {
   display: flex;
   flex-direction: row;
@@ -823,29 +846,6 @@ html {
 }
 .slider__nav-button--next {
   background-image: url("../assets/icons/arrow-right.png");
-}
-
-.card {
-  height: 435px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  background-color: #fafafa;
-  transition: background-color 0.2s ease;
-  transition: filter 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-.card:hover {
-  background-color: #ffffff;
-  filter: drop-shadow(0 0 3px #cdcdcd);
-  transition: background-color 0.2s ease;
-  transition: filter 0.2s ease;
-}
-.card__title {
-  color: #545454;
 }
 
 #our-friends .content-wrapper {
