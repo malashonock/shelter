@@ -498,6 +498,16 @@ ul {
   .h3 {
     font-size: 25px;
   }
+
+  .h4, .card__title {
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+  }
+
+  .h5 {
+    letter-spacing: 0;
+  }
 }
 html {
   scroll-behavior: smooth;

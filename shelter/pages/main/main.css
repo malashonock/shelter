@@ -498,6 +498,16 @@ ul {
   .h3 {
     font-size: 25px;
   }
+
+  .h4, .card__title {
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+  }
+
+  .h5 {
+    letter-spacing: 0;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -982,5 +992,88 @@ html {
   #help .card__title {
     font-size: 15px;
     line-height: 110%;
+  }
+}
+#donation .content-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  max-width: 915px;
+}
+#donation .picture {
+  min-width: 505px;
+}
+#donation .text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  row-gap: 20px;
+}
+#donation .text-block__title, #donation .text-block__subtitle {
+  color: #545454;
+}
+#donation .text-block__text {
+  color: #b2b2b2;
+}
+#donation .credit-card {
+  background-color: #f1cdb3;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 9px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+#donation .credit-card__number {
+  color: #545454;
+}
+
+@media (max-width: 1279px) {
+  #donation .content-wrapper {
+    max-width: 505px;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 60px;
+  }
+  #donation .content-wrapper .text-block {
+    max-width: 380px;
+  }
+}
+@media (max-width: 767px) {
+  #donation .content-wrapper {
+    max-width: 100%;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    row-gap: 42px;
+  }
+  #donation .content-wrapper .text-block {
+    padding: 0 10px;
+    align-items: center;
+    row-gap: 20px;
+  }
+  #donation .content-wrapper .text-block__title, #donation .content-wrapper .text-block__subtitle {
+    text-align: center;
+  }
+  #donation .content-wrapper .text-block__text {
+    text-align: justify;
+  }
+  #donation .credit-card {
+    max-width: 100%;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    -moz-column-gap: 14px;
+         column-gap: 14px;
+  }
+  #donation .picture {
+    min-width: auto;
+    max-width: 260px;
   }
 }/*# sourceMappingURL=main.css.map */
