@@ -1,0 +1,118 @@
+@use "vars" as *;
+
+#contacts {
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    column-gap: 160px;
+    row-gap: 65px;
+    padding-top: 40px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+  }
+  
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 16px;
+    
+    &__title {
+      color: $color-light-xl;
+    }
+    
+    &__link {
+      min-height: 32px;
+      color: $color-primary;
+      @include hover-transition(color);
+
+      .contact-link__icon path {
+        fill: $color-primary;
+        @include hover-transition(fill);
+      }
+
+      &:hover {
+        color: $color-light-xl;
+        @include hover-transition(color);
+
+        .contact-link__icon path {
+          fill: $color-light-xl;
+          @include hover-transition(fill);
+        }
+      }
+    }
+  }
+  
+  .contacts {
+    max-width: 279px;
+    height: 234px;
+  }
+  
+  .locations {
+    max-width: 301px;
+    height: 234px;
+  }
+
+  .picture {
+    max-width: 300px;
+  }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    &__icon {
+      flex-shrink: 0;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  #contacts {
+    .content-wrapper {
+      padding-top: 30px;
+      column-gap: 60px;
+    }
+    
+    .text-block {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #contacts {
+    .content-wrapper {
+      row-gap: 40px;
+    }
+
+    .text-block {
+      max-width: 100%;
+      row-gap: 40px;
+      
+      &__title {
+        text-align: center;
+      }
+
+      &__link {
+      }
+    }
+
+    .picture {
+      max-width: 260px;
+    }
+
+    .contacts,
+    .locations {
+      height: min-content;
+    }
+
+    .contact-link {
+      &__text {
+        font-size: 20px;
+        line-height: 115%; /* identical to box height, or 23px */
+      }
+    }
+  }
+}
