@@ -1,0 +1,119 @@
+@use "../../shared/vars" as *;
+@use "../../shared/buttons";
+@use "../../shared/slider";
+
+#our-friends {
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    row-gap: 60px;
+  }
+
+  .title {
+    text-align: center;
+    color: $color-dark-l;
+  }
+
+  /* Slider configuration */
+  .slider {
+    display: flex;
+    flex-direction: column;
+    row-gap: 60px;
+
+    &__wrapper {
+      flex-wrap: wrap;
+      row-gap: 30px;
+    }
+
+    &__nav-button {
+      &--prev {
+        background-image: url("../assets/icons/arrow-left.png");
+      }
+
+      &--next {
+        background-image: url("../assets/icons/arrow-right.png");
+      }
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+    }
+
+    &__pagination {
+      @extend .button;
+      @extend .button--secondary;
+      @extend .button--active;
+      @extend .slider__nav-button;
+    }
+  }
+
+  /* Card configuration */
+  .card {
+    height: 435px;
+    padding-bottom: 30px;
+    border-radius: 9px;
+    background-color: $color-light-s;
+  }
+}
+
+@media (max-width: 1279px) {
+  #our-friends {
+    .content-wrapper {
+      row-gap: 30px;
+      padding-bottom: 76px;
+    }
+
+    /* Slider configuration */
+    .slider {
+      row-gap: 40px;
+
+      &__wrapper {
+        max-width: 580px;
+        row-gap: 30px;
+      }
+
+      /* Remove after embedding swiper.js */
+      &__slide:nth-of-type(7),
+      &__slide:nth-of-type(8) {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #our-friends {
+    .content-wrapper {
+      row-gap: 42px;
+      padding-bottom: 42px;
+    }
+
+    /* Slider configuration */
+    .slider {
+      /* Remove after embedding swiper.js */
+      justify-content: center;
+      row-gap: 42px;
+
+      &__wrapper {
+        flex: 1 1 100%;
+        justify-content: center;
+      }
+
+      &__slide:nth-of-type(4),
+      &__slide:nth-of-type(5),
+      &__slide:nth-of-type(6) {
+        display: none;
+      }
+
+      &__controls {
+        width: 100%;
+        justify-content: space-between;
+        column-gap: normal;
+      }
+    }
+  }
+}

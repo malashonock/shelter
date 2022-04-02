@@ -5,6 +5,7 @@
   border-radius: 100px;
   color: $color-dark-3xl;
   @include hover-transition(background-color);
+  @include hover-transition(border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +19,27 @@
     border: 2px solid $color-primary;
   }
 
-  &:hover {
-    background-color: $color-primary-light;
+  &--active {
+    background-color: $color-primary;
+    border-color: $color-primary;
     @include hover-transition(background-color);
+    @include hover-transition(border-color);
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $color-primary-light;
+    border-color: $color-primary-light;
+    @include hover-transition(background-color);
+    @include hover-transition(border-color);
+  }
+
+  &:disabled {
+    border-color: $color-dark-s;
+    color: $color-dark-s;
+    color: $color-dark-s;
+
+    svg path {
+      fill: $color-dark-s;
+    }
   }
 }

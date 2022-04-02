@@ -425,7 +425,7 @@ ul {
   font-weight: bold;
   src: url(../assets/fonts/arial/arialbi.ttf);
 }
-.h-base, .button, .h5, .h4, .card__title, .h3, .h2, .h1, .logo__title {
+.h-base, .slider__nav-button, .button, .h5, .h4, .card__title, .h3, .h2, .h1, .logo__title {
   font-family: "Georgia", serif;
   font-style: normal;
   font-weight: normal;
@@ -467,6 +467,12 @@ ul {
   font-size: 17px;
   line-height: 130%;
   /* identical to box height, or 22px */
+}
+
+.slider__nav-button {
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
 }
 
 .p-base, .logo__subtitle, .p-s, .p-l, .navmenu__link {
@@ -513,7 +519,7 @@ html {
   scroll-behavior: smooth;
 }
 
-.button {
+.button:not(:disabled) {
   cursor: pointer;
 }
 
@@ -685,6 +691,7 @@ html {
   border-radius: 100px;
   color: #292929;
   transition: background-color 0.2s ease;
+  transition: border-color 0.2s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -696,9 +703,25 @@ html {
   background-color: transparent;
   border: 2px solid #f1cdb3;
 }
-.button:hover {
-  background-color: #fddcc4;
+.button--active {
+  background-color: #f1cdb3;
+  border-color: #f1cdb3;
   transition: background-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+.button:hover:not(:disabled) {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: background-color 0.2s ease;
+  transition: border-color 0.2s ease;
+}
+.button:disabled {
+  border-color: #cdcdcd;
+  color: #cdcdcd;
+  color: #cdcdcd;
+}
+.button:disabled svg path {
+  fill: #cdcdcd;
 }
 
 .card {
@@ -721,7 +744,6 @@ html {
 .card__title {
   color: #545454;
 }
-
 #not-only {
   display: flex;
   flex-direction: row;

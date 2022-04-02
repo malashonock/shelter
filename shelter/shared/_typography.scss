@@ -98,6 +98,16 @@
   line-height: 130%; /* identical to box height, or 22px */
 }
 
+.slider__nav-button {
+  // Had to repeat the .h4 style
+  // @extend .h4 was not applied due to specifity issues
+  // .button was applied instead
+  @extend .h-base;
+  font-size: 20px;
+  line-height: 115%;
+  /* identical to box height, or 23px */
+}
+
 .p-base {
   font-family: "Arial", sans-serif;
   font-weight: normal;
