@@ -691,6 +691,10 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: #fafafa;
 }
 .card--interactive {
   cursor: pointer;
@@ -706,6 +710,7 @@ html {
 .card__title {
   color: #545454;
 }
+
 #contacts .content-wrapper {
   display: flex;
   justify-content: center;
@@ -865,7 +870,6 @@ html {
 
 #our-friends {
   /* Slider configuration */
-  /* Card configuration */
 }
 #our-friends .content-wrapper {
   display: flex;
@@ -879,7 +883,6 @@ html {
   color: #545454;
 }
 #our-friends .slider {
-  display: flex;
   flex-direction: column;
   row-gap: 60px;
 }
@@ -887,25 +890,12 @@ html {
   flex-wrap: wrap;
   row-gap: 30px;
 }
-#our-friends .slider__nav-button--prev {
-  background-image: url("../assets/icons/arrow-left.png");
-}
-#our-friends .slider__nav-button--next {
-  background-image: url("../assets/icons/arrow-right.png");
-}
 #our-friends .slider__controls {
   display: flex;
   justify-content: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
 }
-#our-friends .card {
-  height: 435px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  background-color: #fafafa;
-}
-
 @media (max-width: 1279px) {
   #our-friends {
     /* Slider configuration */

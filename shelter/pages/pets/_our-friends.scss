@@ -18,23 +18,12 @@
 
   /* Slider configuration */
   .slider {
-    display: flex;
     flex-direction: column;
     row-gap: 60px;
 
     &__wrapper {
       flex-wrap: wrap;
       row-gap: 30px;
-    }
-
-    &__nav-button {
-      &--prev {
-        background-image: url("../assets/icons/arrow-left.png");
-      }
-
-      &--next {
-        background-image: url("../assets/icons/arrow-right.png");
-      }
     }
 
     &__controls {
@@ -49,14 +38,6 @@
       @extend .button--active;
       @extend .slider__nav-button;
     }
-  }
-
-  /* Card configuration */
-  .card {
-    height: 435px;
-    padding-bottom: 30px;
-    border-radius: 9px;
-    background-color: $color-light-s;
   }
 }
 

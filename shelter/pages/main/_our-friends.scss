@@ -20,24 +20,6 @@
     &__wrapper {
       max-width: 990px;
     }
-
-    &__nav-button {
-      &--prev {
-        background-image: url("../assets/icons/arrow-left.png");
-      }
-
-      &--next {
-        background-image: url("../assets/icons/arrow-right.png");
-      }
-    }
-  }
-
-  /* Card configuration */
-  .card {
-    height: 435px;
-    padding-bottom: 30px;
-    border-radius: 9px;
-    background-color: $color-light-s;
   }
 }
 

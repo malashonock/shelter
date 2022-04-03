@@ -6,6 +6,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: $color-light-s;
 
   &--interactive {
     cursor: pointer;
@@ -23,9 +27,5 @@
   &__title {
     @extend .h4;
     color: $color-dark-l;
-  }
-
-  .button {
-    
   }
 }

@@ -729,6 +729,10 @@ html {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: #fafafa;
 }
 .card--interactive {
   cursor: pointer;
@@ -744,6 +748,7 @@ html {
 .card__title {
   color: #545454;
 }
+
 #not-only {
   display: flex;
   flex-direction: row;
@@ -889,7 +894,6 @@ html {
 
 #our-friends {
   /* Slider configuration */
-  /* Card configuration */
 }
 #our-friends .content-wrapper {
   display: flex;
@@ -904,18 +908,6 @@ html {
 }
 #our-friends .slider__wrapper {
   max-width: 990px;
-}
-#our-friends .slider__nav-button--prev {
-  background-image: url("../assets/icons/arrow-left.png");
-}
-#our-friends .slider__nav-button--next {
-  background-image: url("../assets/icons/arrow-right.png");
-}
-#our-friends .card {
-  height: 435px;
-  padding-bottom: 30px;
-  border-radius: 9px;
-  background-color: #fafafa;
 }
 
 @media (max-width: 1279px) {
