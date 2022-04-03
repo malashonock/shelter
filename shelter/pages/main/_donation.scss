@@ -33,11 +33,17 @@
 
   .credit-card {
     background-color: $color-primary;
+    @include hover-transition(background-color);
     display: flex;
     align-items: center;
     padding: 10px 15px;
     border-radius: 9px;
     column-gap: 15px;
+
+    &:hover {
+      background-color: $color-primary-light;
+      @include hover-transition(background-color);
+    }
 
     &__number {
       color: $color-dark-l;

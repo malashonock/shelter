@@ -1037,12 +1037,17 @@ html {
 }
 #donation .credit-card {
   background-color: #f1cdb3;
+  transition: background-color 0.2s ease;
   display: flex;
   align-items: center;
   padding: 10px 15px;
   border-radius: 9px;
   -moz-column-gap: 15px;
        column-gap: 15px;
+}
+#donation .credit-card:hover {
+  background-color: #fddcc4;
+  transition: background-color 0.2s ease;
 }
 #donation .credit-card__number {
   color: #545454;
