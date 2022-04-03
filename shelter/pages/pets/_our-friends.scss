@@ -34,9 +34,10 @@
 
     &__pagination {
       @extend .button;
-      @extend .button--secondary;
-      @extend .button--active;
+      @extend .button--primary;
       @extend .slider__nav-button;
+
+      
     }
   }
 }

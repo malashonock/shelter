@@ -19,14 +19,7 @@
     border: 2px solid $color-primary;
   }
 
-  &--active {
-    background-color: $color-primary;
-    border-color: $color-primary;
-    @include hover-transition(background-color);
-    @include hover-transition(border-color);
-  }
-
-  &:hover:not(:disabled) {
+  &:hover:not(:disabled):not(.slider__pagination) {
     background-color: $color-primary-light;
     border-color: $color-primary-light;
     @include hover-transition(background-color);

@@ -703,13 +703,7 @@ html {
   background-color: transparent;
   border: 2px solid #f1cdb3;
 }
-.button--active {
-  background-color: #f1cdb3;
-  border-color: #f1cdb3;
-  transition: background-color 0.2s ease;
-  transition: border-color 0.2s ease;
-}
-.button:hover:not(:disabled) {
+.button:hover:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
   border-color: #fddcc4;
   transition: background-color 0.2s ease;
@@ -733,6 +727,7 @@ html {
   padding-bottom: 30px;
   border-radius: 9px;
   background-color: #fafafa;
+  transition: background-color 0.2s ease;
 }
 .card--interactive {
   cursor: pointer;

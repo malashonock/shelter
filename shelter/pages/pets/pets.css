@@ -695,6 +695,7 @@ html {
   padding-bottom: 30px;
   border-radius: 9px;
   background-color: #fafafa;
+  transition: background-color 0.2s ease;
 }
 .card--interactive {
   cursor: pointer;
@@ -814,20 +815,14 @@ html {
   justify-content: center;
   align-items: center;
 }
-.button--primary {
+.button--primary, #our-friends .slider__pagination {
   background-color: #f1cdb3;
 }
-.button--secondary, #our-friends .slider__pagination {
+.button--secondary {
   background-color: transparent;
   border: 2px solid #f1cdb3;
 }
-.button--active, #our-friends .slider__pagination {
-  background-color: #f1cdb3;
-  border-color: #f1cdb3;
-  transition: background-color 0.2s ease;
-  transition: border-color 0.2s ease;
-}
-.button:hover:not(:disabled), #our-friends .slider__pagination:hover:not(:disabled) {
+.button:hover:not(:disabled):not(.slider__pagination), #our-friends .slider__pagination:hover:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
   border-color: #fddcc4;
   transition: background-color 0.2s ease;
