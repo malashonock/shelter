@@ -1,3 +1,1 @@
-export function hello() {
-  alert("hello!");
-}
+import { burgerMenuToggle } from "../../shared/burger-menu";

@@ -1,5 +1,6 @@
 @use "shared";
 @use "vars" as *;
+@use "burger";
 
 .navbar {
   padding-top: 30px;
@@ -11,7 +12,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
+  
   &__burger {
     display: none;
   }
@@ -24,12 +25,12 @@
   justify-content: space-between;
   align-items: center;
   row-gap: 10px;
-
+  
   &__title {
     @extend .h1;
     color: $color-dark-l;
   }
-
+  
   &__subtitle {
     @extend .p-base;
     font-size: 13px;
@@ -46,19 +47,19 @@
   align-items: center;
   column-gap: 35px;
   padding: 0;
-
+  
   &__item {
     position: relative; // for underline positioning
   }
-
+  
   &__link {
     @extend .p-l;
     color: $color-dark-l;
     @include hover-transition(color);
-
+    
     &--active {
       color: $color-dark-3xl;
-
+      
       &::after {
         content: "";
         position: absolute;
@@ -69,7 +70,7 @@
         background-color: $color-primary;
       }
     }
-
+    
     &:hover {
       color: $color-dark-3xl;
       @include hover-transition(color);
@@ -83,12 +84,12 @@
     padding-top: 60px;
     padding-bottom: 60px;
   }
-
+  
   .logo {
     &__title {
       color: $color-primary;
     }
-
+    
     &__subtitle {
       color: $color-light-xl;
     }
@@ -123,48 +124,10 @@
 
     &__burger {
       display: block;
-      position: relative;
-      width: 30px;
-
-      &,
-      &::before,
-      &::after {
-        height: 2px;
-        background-color: $color-black;
-      }
-
-      &::before,
-      &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        left: 0;
-      }
-
-      &::before {
-        top: -10px;
-      }
-
-      &::after {
-        bottom: -10px;
-      }
     }
 
     &__menu {
       display: none;
-    }
-  }
-
-  // Dark theme
-  .section--dark {
-    .navbar {
-      &__burger {
-        &,
-        &::before,
-        &::after {
-          background-color: $color-primary;
-        }
-      }
     }
   }
 }

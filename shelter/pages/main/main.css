@@ -361,6 +361,7 @@ img {
 
 button {
   border-style: none;
+  padding: 0;
 }
 
 a {
@@ -562,6 +563,50 @@ html {
     padding-bottom: 42px;
   }
 }
+.burger-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  background-color: transparent;
+}
+.burger-toggle__icon {
+  position: relative;
+}
+.burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
+  width: 100%;
+  height: 2px;
+}
+.burger-toggle__icon::before, .burger-toggle__icon::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+}
+.burger-toggle__icon::before {
+  top: -10px;
+}
+.burger-toggle__icon::after {
+  bottom: -10px;
+}
+
+.burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
+  background-color: #000000;
+  transition: background-color 0.2s ease;
+}
+.burger-toggle:hover .burger-toggle__icon, .burger-toggle:hover .burger-toggle__icon::before, .burger-toggle:hover .burger-toggle__icon::after {
+  background-color: #545454;
+  transition: background-color 0.2s ease;
+}
+
+.section--dark .burger-toggle__icon, .section--dark .burger-toggle__icon::before, .section--dark .burger-toggle__icon::after {
+  background-color: #f1cdb3;
+  transition: background-color 0.2s ease;
+}
+.section--dark .burger-toggle:hover .burger-toggle__icon, .section--dark .burger-toggle:hover .burger-toggle__icon::before, .section--dark .burger-toggle:hover .burger-toggle__icon::after {
+  background-color: #fddcc4;
+  transition: background-color 0.2s ease;
+}
+
 .navbar {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -659,31 +704,9 @@ html {
   }
   .navbar__burger {
     display: block;
-    position: relative;
-    width: 30px;
-  }
-  .navbar__burger, .navbar__burger::before, .navbar__burger::after {
-    height: 2px;
-    background-color: #000000;
-  }
-  .navbar__burger::before, .navbar__burger::after {
-    position: absolute;
-    content: "";
-    width: 100%;
-    left: 0;
-  }
-  .navbar__burger::before {
-    top: -10px;
-  }
-  .navbar__burger::after {
-    bottom: -10px;
   }
   .navbar__menu {
     display: none;
-  }
-
-  .section--dark .navbar__burger, .section--dark .navbar__burger::before, .section--dark .navbar__burger::after {
-    background-color: #f1cdb3;
   }
 }
 .button {
