@@ -104,8 +104,7 @@
   // .button was applied instead
   @extend .h-base;
   font-size: 20px;
-  line-height: 115%;
-  /* identical to box height, or 23px */
+  line-height: 115%; /* identical to box height, or 23px */
 }
 
 .p-base {
@@ -122,10 +121,15 @@
 
 .p-s {
   @extend .p-base;
-  font-family: "Arial";
   font-style: italic;
   font-size: 12px;
   line-height: 150%; /* identical to box height, or 18px */
+}
+
+.p-mobile-menu {
+  @extend .p-base;
+  font-size: 32px;
+  line-height: 160%; /* or 51px */
 }
 
 @media (max-width: 767px) {

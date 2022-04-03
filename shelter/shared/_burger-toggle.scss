@@ -32,6 +32,10 @@
       bottom: -10px;
     }
   }
+
+  &--open {
+    transform: rotate(90deg);
+  }
 }
 
 // Light theme
@@ -58,7 +62,8 @@
 }
 
 // Dark theme
-.section--dark {
+.section--dark,
+.burger-menu--dark {
   .burger-toggle {
     &__icon {  
       &,

@@ -1,0 +1,53 @@
+@use "vars"as *;
+
+.menu {
+  display: flex;
+  align-items: center;
+  padding: 0;
+
+  &__item {
+    position: relative; // for underline positioning
+  }
+
+  &__link {
+    color: $color-dark-l;
+    @include hover-transition(color);
+
+    &--active {
+      color: $color-dark-3xl;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -3px;
+        width: 100%;
+        height: 3px;
+        background-color: $color-primary;
+      }
+    }
+
+    &:hover {
+      color: $color-dark-3xl;
+      @include hover-transition(color);
+    }
+  }
+}
+
+// Dark theme
+.section--dark,
+.burger-menu--dark {
+  .menu {
+    &__link {
+      color: $color-dark-s;
+  
+      &--active {
+        color: $color-light-s;
+      }
+  
+      &:hover {
+        color: $color-light-s;
+      }
+    }
+  }
+}

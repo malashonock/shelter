@@ -1,0 +1,38 @@
+@use "vars" as *;
+@use "typography";
+
+.logo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 10px;
+
+  &__title {
+    @extend .h1;
+    color: $color-dark-l;
+  }
+
+  &__subtitle {
+    @extend .p-base;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: 0.1em;
+    color: $color-dark-3xl;
+  }
+}
+
+// Dark theme
+.section--dark,
+.burger-menu--dark {
+  .logo {
+    &__title {
+      color: $color-primary;
+    }
+
+    &__subtitle {
+      color: $color-light-xl;
+    }
+  }
+}

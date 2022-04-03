@@ -1,0 +1,43 @@
+@use "vars" as *;
+@use "logo";
+
+:root {
+  position: relative;
+}
+
+.burger-menu {
+  position: fixed;
+  width: 320px;
+  right: 0;
+  height: 100vh;
+  z-index: 2;
+  background-color: $color-dark-3xl;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateX(100%);
+
+  .header {
+    position: absolute;
+    top: 30px;
+    left: 10px;
+    right: 30px;
+    width: 300px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__burger {
+    margin: auto;
+  }
+
+  .menu {
+    flex-direction: column;
+    row-gap: 40px;
+  
+    &__link {
+      @extend .p-mobile-menu;
+    }
+  }
+}
