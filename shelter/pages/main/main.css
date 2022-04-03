@@ -976,6 +976,8 @@ html {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  background-color: transparent;
+  padding: 0;
 }
 
 @media (max-width: 1279px) {
