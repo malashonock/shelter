@@ -1,6 +1,6 @@
-@use "/shared/vars" as *;
-@use "/shared/buttons";
-@use "/shared/slider";
+@use "../../shared/vars" as *;
+@use "../../shared/buttons";
+@use "../../shared/slider";
 
 #our-friends {
   .content-wrapper {
