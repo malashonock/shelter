@@ -17,6 +17,10 @@
   justify-content: center;
   transform: translateX(100%);
 
+  &--open {
+    transform: translateX(0%);
+  }
+
   .header {
     position: absolute;
     top: 30px;
