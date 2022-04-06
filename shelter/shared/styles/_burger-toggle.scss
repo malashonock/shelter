@@ -5,8 +5,9 @@
   width: 30px;
   height: 22px;
   background-color: transparent;
-
+  
   &__icon {
+    display: block;
     position: relative;
 
     &,

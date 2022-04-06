@@ -593,6 +593,7 @@ html {
   background-color: transparent;
 }
 .burger-toggle__icon {
+  display: block;
   position: relative;
 }
 .burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
