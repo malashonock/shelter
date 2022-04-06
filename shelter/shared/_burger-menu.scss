@@ -10,8 +10,8 @@
   width: 320px;
   right: 0;
   height: 100vh;
+  background-color: $color-light-xl;
   z-index: 2;
-  background-color: $color-dark-3xl;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
   }
-
+  
   &__burger {
     margin: auto;
   }
@@ -41,9 +41,14 @@
   .menu {
     flex-direction: column;
     row-gap: 40px;
-  
+    
     &__link {
       @extend .p-mobile-menu;
     }
+  }
+
+  // Dark theme
+  &--dark {
+    background-color: $color-dark-3xl;
   }
 }
