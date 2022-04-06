@@ -1,4 +1,5 @@
 @use "../../shared/vars" as *;
+@use "../../shared/typography";
 
 #donation {
   .content-wrapper {
@@ -46,6 +47,7 @@
     }
 
     &__number {
+      @extend .h4;
       color: $color-dark-l;
     }
   }
@@ -97,6 +99,11 @@
       padding-top: 13px;
       padding-bottom: 13px;
       column-gap: 14px;
+
+      &__number {
+        font-size: 15px;
+        line-height: 110%; /* identical to box height, or 17px */
+      }
     }
 
     .picture {
