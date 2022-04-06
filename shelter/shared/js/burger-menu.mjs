@@ -7,16 +7,19 @@ export const burgerMenu = document.querySelector("#burger-menu");
 export const burgerToggleBurgerMenu =
   burgerMenu.querySelector(".burger-toggle");
 
-export const menuLinks = burgerMenu.querySelectorAll(".menu__link");
+const menuLinks = burgerMenu.querySelectorAll(".menu__link");
 
 const mainHeader = document.querySelector("#header");
+const overlay = document.querySelector(".overlay");
 
 const openBurgerMenu = () => {
   mainHeader.classList.add("transparent");
+  overlay.classList.add("overlay--active");
   burgerMenu.classList.add("burger-menu--open");
 };
 
 const closeBurgerMenu = () => {
+  overlay.classList.remove("overlay--active");
   mainHeader.classList.remove("transparent");
   burgerMenu.classList.remove("burger-menu--open");
 };
@@ -33,4 +36,8 @@ menuLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     closeBurgerMenu();
   });
+});
+
+overlay.addEventListener("click", (event) => {
+  closeBurgerMenu();
 });

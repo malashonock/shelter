@@ -553,6 +553,24 @@ html {
   transition-property: opacity;
 }
 
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  background-color: #292929;
+  opacity: 0;
+  transition: all 0.2s ease;
+  transition-property: opacity;
+}
+.overlay--active {
+  pointer-events: auto;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  transition-property: opacity;
+}
+
 @media (max-width: 1279px) {
   .section__content {
     max-width: 708px;
@@ -1023,7 +1041,7 @@ html {
   right: 0;
   height: 100vh;
   background-color: #ffffff;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;

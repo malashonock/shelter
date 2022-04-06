@@ -46,6 +46,23 @@ html {
   @include smooth-transition(opacity);
 }
 
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  background-color: $color-dark-3xl;
+  opacity: 0;
+  @include smooth-transition(opacity);
+  
+  &--active {
+    pointer-events: auto;
+    opacity: 0.6;
+    @include smooth-transition(opacity);
+  }
+}
+
 @media (max-width: 1279px) {
   .section {
     &__content {
