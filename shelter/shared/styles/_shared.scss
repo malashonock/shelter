@@ -41,6 +41,11 @@ html {
   margin: 0 auto;
 }
 
+.transparent {
+  opacity: 0;
+  @include smooth-transition(opacity);
+}
+
 @media (max-width: 1279px) {
   .section {
     &__content {

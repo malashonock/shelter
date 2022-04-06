@@ -4,6 +4,10 @@
 @use "logo";
 @use "menu";
 
+#header {
+  @include smooth-transition(opacity); /* Fade-in smoothly when burger menu is closed */
+}
+
 .navbar {
   padding-top: 30px;
   padding-bottom: 30px;

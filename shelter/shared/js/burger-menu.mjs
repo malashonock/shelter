@@ -9,16 +9,16 @@ export const burgerToggleBurgerMenu =
 
 export const menuLinks = burgerMenu.querySelectorAll(".menu__link");
 
+const mainHeader = document.querySelector("#header");
+
 const openBurgerMenu = () => {
-  if (!burgerMenu.classList.contains("burger-menu--open")) {
-    burgerMenu.classList.add("burger-menu--open");
-  }
+  mainHeader.classList.add("transparent");
+  burgerMenu.classList.add("burger-menu--open");
 };
 
 const closeBurgerMenu = () => {
-  if (burgerMenu.classList.contains("burger-menu--open")) {
-    burgerMenu.classList.remove("burger-menu--open");
-  }
+  mainHeader.classList.remove("transparent");
+  burgerMenu.classList.remove("burger-menu--open");
 };
 
 burgerToggleHeader.addEventListener("click", (event) => {

@@ -547,6 +547,12 @@ html {
   margin: 0 auto;
 }
 
+.transparent {
+  opacity: 0;
+  transition: all 0.2s ease;
+  transition-property: opacity;
+}
+
 @media (max-width: 1279px) {
   .section__content {
     max-width: 708px;
@@ -688,6 +694,12 @@ html {
 .section--dark .menu__link:hover,
 .burger-menu--dark .menu__link:hover {
   color: #fafafa;
+}
+
+#header {
+  transition: all 0.2s ease;
+  transition-property: opacity;
+  /* Fade-in smoothly when burger menu is closed */
 }
 
 .navbar {
