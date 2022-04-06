@@ -4,8 +4,7 @@
   padding: 15px 45px;
   border-radius: 100px;
   color: $color-dark-3xl;
-  @include hover-transition(background-color);
-  @include hover-transition(border-color);
+  @include smooth-transition(background-color, border-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,8 +21,7 @@
   &:hover:not(:disabled):not(.slider__pagination) {
     background-color: $color-primary-light;
     border-color: $color-primary-light;
-    @include hover-transition(background-color);
-    @include hover-transition(border-color);
+    @include smooth-transition(background-color, border-color);
   }
 
   &:disabled {

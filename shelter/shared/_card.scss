@@ -10,18 +10,16 @@
   padding-bottom: 30px;
   border-radius: 9px;
   background-color: $color-light-s;
-  @include hover-transition(background-color);
+  @include smooth-transition(background-color);
 
   &--interactive {
     cursor: pointer;
-    @include hover-transition(background-color);
-    @include hover-transition(filter);
+    @include smooth-transition(background-color, filter);
 
     &:hover {
       background-color: $color-light-xl;
       filter: drop-shadow(0 0 3px $color-dark-s);
-      @include hover-transition(background-color);
-      @include hover-transition(filter);
+      @include smooth-transition(background-color, filter);
     }
   }
 

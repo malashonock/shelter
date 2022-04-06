@@ -45,7 +45,7 @@
     &::before,
     &::after {
       background-color: $color-black;
-      @include hover-transition(background-color);
+      @include smooth-transition(background-color);
     }
   }
 
@@ -55,7 +55,7 @@
       &::before,
       &::after {
         background-color: $color-dark-l;
-        @include hover-transition(background-color);
+        @include smooth-transition(background-color);
       }
     }
   }
@@ -70,7 +70,7 @@
       &::before,
       &::after {
         background-color: $color-primary;
-        @include hover-transition(background-color);
+        @include smooth-transition(background-color);
       }
     }
     
@@ -80,7 +80,7 @@
         &::before,
         &::after {
           background-color: $color-primary-light;
-          @include hover-transition(background-color);
+          @include smooth-transition(background-color);
         }
       }
     }

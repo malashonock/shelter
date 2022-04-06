@@ -11,7 +11,7 @@
 
   &__link {
     color: $color-dark-l;
-    @include hover-transition(color);
+    @include smooth-transition(color);
 
     &--active {
       color: $color-dark-3xl;
@@ -29,7 +29,7 @@
 
     &:hover {
       color: $color-dark-3xl;
-      @include hover-transition(color);
+      @include smooth-transition(color);
     }
   }
 }

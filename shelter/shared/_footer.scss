@@ -24,20 +24,20 @@
     &__link {
       min-height: 32px;
       color: $color-primary;
-      @include hover-transition(color);
+      @include smooth-transition(color);
 
       .contact-link__icon path {
         fill: $color-primary;
-        @include hover-transition(fill);
+        @include smooth-transition(fill);
       }
 
       &:hover {
         color: $color-light-xl;
-        @include hover-transition(color);
+        @include smooth-transition(color);
 
         .contact-link__icon path {
           fill: $color-light-xl;
-          @include hover-transition(fill);
+          @include smooth-transition(fill);
         }
       }
     }
