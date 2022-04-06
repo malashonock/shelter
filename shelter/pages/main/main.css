@@ -426,7 +426,7 @@ ul {
   font-weight: bold;
   src: url("/assets/fonts/arial/arialbi.ttf");
 }
-.h-base, .slider__nav-button, .button, .h5, .h4, .card__title, .h3, .h2, .h1, .logo__title {
+.h-base, .slider__nav-button, .button, .h5, .h4, #donation .credit-card__number, .card__title, .h3, .h2, .h1, .logo__title {
   font-family: "Georgia", serif;
   font-style: normal;
   font-weight: normal;
@@ -452,7 +452,7 @@ ul {
   /* or 45px */
 }
 
-.h4, .card__title {
+.h4, #donation .credit-card__number, .card__title {
   font-size: 20px;
   line-height: 115%;
   /* identical to box height, or 23px */
@@ -509,12 +509,6 @@ ul {
 
   .h3 {
     font-size: 25px;
-  }
-
-  .h4, .card__title {
-    font-size: 15px;
-    line-height: 110%;
-    /* identical to box height, or 17px */
   }
 
   .h5 {
@@ -1144,6 +1138,11 @@ html {
     -moz-column-gap: 14px;
          column-gap: 14px;
   }
+  #donation .credit-card__number {
+    font-size: 15px;
+    line-height: 110%;
+    /* identical to box height, or 17px */
+  }
   #donation .picture {
     min-width: auto;
     max-width: 260px;
@@ -1255,8 +1254,8 @@ html {
   width: 320px;
   right: 0;
   height: 100vh;
+  background-color: #ffffff;
   z-index: 2;
-  background-color: #292929;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1285,4 +1284,7 @@ html {
 .burger-menu .menu {
   flex-direction: column;
   row-gap: 40px;
+}
+.burger-menu--dark {
+  background-color: #292929;
 }/*# sourceMappingURL=main.css.map */
