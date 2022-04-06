@@ -1,5 +1,6 @@
-@use "../../shared/vars" as *;
-@use "../../shared/slider";
+@use "../../../shared/styles/vars" as *;
+@use "../../../shared/styles/buttons";
+@use "../../../shared/styles/slider";
 
 #our-friends {
   .content-wrapper {
@@ -17,22 +18,49 @@
 
   /* Slider configuration */
   .slider {
+    flex-direction: column;
+    row-gap: 60px;
+
     &__wrapper {
-      max-width: 990px;
+      flex-wrap: wrap;
+      row-gap: 30px;
+    }
+
+    &__controls {
+      display: flex;
+      justify-content: center;
+      column-gap: 20px;
+    }
+
+    &__pagination {
+      @extend .button;
+      @extend .button--primary;
+      @extend .slider__nav-button;
+
+      
     }
   }
 }
 
 @media (max-width: 1279px) {
   #our-friends {
+    .content-wrapper {
+      row-gap: 30px;
+      padding-bottom: 76px;
+    }
+
     /* Slider configuration */
     .slider {
+      row-gap: 40px;
+
       &__wrapper {
         max-width: 580px;
+        row-gap: 30px;
       }
 
       /* Remove after embedding swiper.js */
-      &__slide:nth-of-type(3) {
+      &__slide:nth-of-type(7),
+      &__slide:nth-of-type(8) {
         display: none;
       }
     }
@@ -43,28 +71,30 @@
   #our-friends {
     .content-wrapper {
       row-gap: 42px;
+      padding-bottom: 42px;
     }
 
     /* Slider configuration */
     .slider {
       /* Remove after embedding swiper.js */
-      flex-wrap: wrap;
       justify-content: center;
-      row-gap: 20px;
-      column-gap: 80px;
+      row-gap: 42px;
 
       &__wrapper {
-        order: 1;
         flex: 1 1 100%;
         justify-content: center;
       }
 
-      &__slide:nth-of-type(2) {
+      &__slide:nth-of-type(4),
+      &__slide:nth-of-type(5),
+      &__slide:nth-of-type(6) {
         display: none;
       }
 
-      &__nav-button {
-        order: 2;
+      &__controls {
+        width: 100%;
+        justify-content: space-between;
+        column-gap: normal;
       }
     }
   }
