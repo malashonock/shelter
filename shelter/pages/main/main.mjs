@@ -1,1 +1,1 @@
-import { burgerMenuToggle } from "/shared/burger-menu.mjs";
+import * as burgerMenu from "/shared/burger-menu.mjs";

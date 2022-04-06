@@ -599,11 +599,13 @@ html {
 
 .burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
   background-color: #000000;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color;
 }
 .burger-toggle:hover .burger-toggle__icon, .burger-toggle:hover .burger-toggle__icon::before, .burger-toggle:hover .burger-toggle__icon::after {
   background-color: #545454;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color;
 }
 
 .section--dark .burger-toggle__icon, .section--dark .burger-toggle__icon::before, .section--dark .burger-toggle__icon::after,
@@ -611,14 +613,16 @@ html {
 .burger-menu--dark .burger-toggle__icon::before,
 .burger-menu--dark .burger-toggle__icon::after {
   background-color: #f1cdb3;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color;
 }
 .section--dark .burger-toggle:hover .burger-toggle__icon, .section--dark .burger-toggle:hover .burger-toggle__icon::before, .section--dark .burger-toggle:hover .burger-toggle__icon::after,
 .burger-menu--dark .burger-toggle:hover .burger-toggle__icon,
 .burger-menu--dark .burger-toggle:hover .burger-toggle__icon::before,
 .burger-menu--dark .burger-toggle:hover .burger-toggle__icon::after {
   background-color: #fddcc4;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color;
 }
 
 .logo {
@@ -658,7 +662,8 @@ html {
 }
 .menu__link {
   color: #545454;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: color;
 }
 .menu__link--active {
   color: #292929;
@@ -674,7 +679,8 @@ html {
 }
 .menu__link:hover {
   color: #292929;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: color;
 }
 
 .section--dark .menu__link,
@@ -753,18 +759,19 @@ html {
   padding-bottom: 30px;
   border-radius: 9px;
   background-color: #fafafa;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color;
 }
 .card--interactive {
   cursor: pointer;
-  transition: background-color 0.2s ease;
-  transition: filter 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color, filter;
 }
 .card--interactive:hover {
   background-color: #ffffff;
   filter: drop-shadow(0 0 3px #cdcdcd);
-  transition: background-color 0.2s ease;
-  transition: filter 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color, filter;
 }
 .card__title {
   color: #545454;
@@ -792,19 +799,23 @@ html {
 #contacts .text-block__link {
   min-height: 32px;
   color: #f1cdb3;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: color;
 }
 #contacts .text-block__link .contact-link__icon path {
   fill: #f1cdb3;
-  transition: fill 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: fill;
 }
 #contacts .text-block__link:hover {
   color: #ffffff;
-  transition: color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: color;
 }
 #contacts .text-block__link:hover .contact-link__icon path {
   fill: #ffffff;
-  transition: fill 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: fill;
 }
 #contacts .contacts {
   max-width: 279px;
@@ -867,8 +878,8 @@ html {
   padding: 15px 45px;
   border-radius: 100px;
   color: #292929;
-  transition: background-color 0.2s ease;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color, border-color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -883,8 +894,8 @@ html {
 .button:hover:not(:disabled):not(.slider__pagination), #our-friends .slider__pagination:hover:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
   border-color: #fddcc4;
-  transition: background-color 0.2s ease;
-  transition: border-color 0.2s ease;
+  transition: all 0.2s ease;
+  transition-property: background-color, border-color;
 }
 .button:disabled, #our-friends .slider__pagination:disabled {
   border-color: #cdcdcd;

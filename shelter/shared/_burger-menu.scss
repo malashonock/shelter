@@ -16,9 +16,11 @@
   flex-direction: column;
   justify-content: center;
   transform: translateX(100%);
+  @include smooth-transition(transform);
 
   &--open {
     transform: translateX(0%);
+    @include smooth-transition(transform);
   }
 
   .header {
