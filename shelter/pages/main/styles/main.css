@@ -738,6 +738,10 @@ html {
   -moz-column-gap: 35px;
        column-gap: 35px;
 }
+.menu__link {
+  letter-spacing: 0.05px;
+}
+
 .section--dark .navbar {
   padding-top: 60px;
   padding-bottom: 60px;
