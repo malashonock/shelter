@@ -27,6 +27,10 @@
       color: $color-dark-l;
     }
 
+    &__subtitle {
+      line-height: 17px;
+    }
+
     &__text {
       color: $color-dark-m;
     }
@@ -88,6 +92,10 @@
           text-align: center;
         }
 
+        &__subtitle {
+          line-height: 24px;
+        }
+
         &__text {
           text-align: justify;
         }
@@ -96,13 +104,11 @@
 
     .credit-card {
       max-width: 100%;
-      padding-top: 13px;
-      padding-bottom: 13px;
       column-gap: 14px;
 
       &__number {
         font-size: 15px;
-        line-height: 110%; /* identical to box height, or 17px */
+        line-height: 17px;
       }
     }
 

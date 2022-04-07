@@ -435,45 +435,38 @@ ul {
 
 .h1, .logo__title {
   font-size: 32px;
-  line-height: 110%;
-  /* or 35px */
+  line-height: 35px;
 }
 
 .h2 {
   font-size: 44px;
-  line-height: 130%;
-  /* or 57px */
+  line-height: 57px;
   letter-spacing: 0;
 }
 
 .h3 {
   font-size: 35px;
-  line-height: 130%;
-  /* or 45px */
+  line-height: 45px;
 }
 
 .h4, #donation .credit-card__number, .card__title {
   font-size: 20px;
-  line-height: 115%;
-  /* identical to box height, or 23px */
+  line-height: 23px;
 }
 
 .h5 {
   font-size: 15px;
-  line-height: 110%;
-  /* identical to box height, or 17px */
+  line-height: 17px;
 }
 
 .button {
   font-size: 17px;
-  line-height: 130%;
-  /* identical to box height, or 22px */
+  line-height: 22px;
 }
 
 .slider__nav-button {
   font-size: 20px;
-  line-height: 115%;
-  /* identical to box height, or 23px */
+  line-height: 23px;
 }
 
 .p-base, .logo__subtitle, .p-mobile-menu, .burger-menu .menu__link, .p-s, .p-l, .menu__link {
@@ -484,31 +477,30 @@ ul {
 .p-l, .menu__link {
   font-style: normal;
   font-size: 15px;
-  line-height: 160%;
-  /* identical to box height, or 24px */
+  line-height: 24px;
 }
 
 .p-s {
   font-style: italic;
   font-size: 12px;
-  line-height: 150%;
-  /* identical to box height, or 18px */
+  line-height: 18px;
 }
 
 .p-mobile-menu, .burger-menu .menu__link {
   font-size: 32px;
-  line-height: 160%;
-  /* or 51px */
+  line-height: 51px;
 }
 
 @media (max-width: 767px) {
   .h2 {
     font-size: 25px;
+    line-height: 32px;
     letter-spacing: 0.06em;
   }
 
   .h3 {
     font-size: 25px;
+    line-height: 32px;
   }
 
   .h5 {
@@ -735,6 +727,10 @@ html {
 .navbar__burger {
   display: none;
 }
+.navbar__menu {
+  align-self: flex-start;
+  margin-top: 16px;
+}
 
 .menu {
   flex-direction: row;
@@ -780,6 +776,8 @@ html {
 .button--secondary {
   background-color: transparent;
   border: 2px solid #f1cdb3;
+  padding: 13px 43px;
+  /* paddings reduced by border-width */
 }
 .button:hover:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
@@ -1081,7 +1079,10 @@ html {
   }
   #help .card__title {
     font-size: 15px;
-    line-height: 110%;
+    line-height: 17px;
+  }
+  #help .card__img {
+    height: 50px;
   }
 }
 #donation .content-wrapper {
@@ -1105,6 +1106,9 @@ html {
 }
 #donation .text-block__title, #donation .text-block__subtitle {
   color: #545454;
+}
+#donation .text-block__subtitle {
+  line-height: 17px;
 }
 #donation .text-block__text {
   color: #b2b2b2;
@@ -1159,20 +1163,20 @@ html {
   #donation .content-wrapper .text-block__title, #donation .content-wrapper .text-block__subtitle {
     text-align: center;
   }
+  #donation .content-wrapper .text-block__subtitle {
+    line-height: 24px;
+  }
   #donation .content-wrapper .text-block__text {
     text-align: justify;
   }
   #donation .credit-card {
     max-width: 100%;
-    padding-top: 13px;
-    padding-bottom: 13px;
     -moz-column-gap: 14px;
          column-gap: 14px;
   }
   #donation .credit-card__number {
     font-size: 15px;
-    line-height: 110%;
-    /* identical to box height, or 17px */
+    line-height: 17px;
   }
   #donation .picture {
     min-width: auto;
@@ -1223,9 +1227,15 @@ html {
   max-width: 279px;
   height: 234px;
 }
+#contacts .contacts .text-block__title {
+  max-width: 279px;
+}
 #contacts .locations {
   max-width: 301px;
   height: 234px;
+}
+#contacts .locations .text-block__title {
+  max-width: 270px;
 }
 #contacts .picture {
   max-width: 300px;
@@ -1257,6 +1267,7 @@ html {
   #contacts .text-block {
     max-width: 100%;
     row-gap: 40px;
+    align-items: center;
   }
   #contacts .text-block__title {
     text-align: center;
@@ -1272,8 +1283,10 @@ html {
   }
   #contacts .contact-link__text {
     font-size: 20px;
-    line-height: 115%;
-    /* identical to box height, or 23px */
+    line-height: 23px;
+  }
+  #contacts .locations .text-block__link {
+    width: 100%;
   }
 }
 :root {

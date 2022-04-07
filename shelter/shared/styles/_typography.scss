@@ -64,38 +64,38 @@
 .h1 {
   @extend .h-base;
   font-size: 32px;
-  line-height: 110%; /* or 35px */
+  line-height: 35px;
 }
 
 .h2 {
   @extend .h-base;
   font-size: 44px;
-  line-height: 130%; /* or 57px */
+  line-height: 57px;
   letter-spacing: 0;
 }
 
 .h3 {
   @extend .h-base;
   font-size: 35px;
-  line-height: 130%; /* or 45px */
+  line-height: 45px;
 }
 
 .h4 {
   @extend .h-base;
   font-size: 20px;
-  line-height: 115%; /* identical to box height, or 23px */
+  line-height: 23px;
 }
 
 .h5 {
   @extend .h-base;
   font-size: 15px;
-  line-height: 110%; /* identical to box height, or 17px */
+  line-height: 17px;
 }
 
 .button {
   @extend .h-base;
   font-size: 17px;
-  line-height: 130%; /* identical to box height, or 22px */
+  line-height: 22px;
 }
 
 .slider__nav-button {
@@ -104,7 +104,7 @@
   // .button was applied instead
   @extend .h-base;
   font-size: 20px;
-  line-height: 115%; /* identical to box height, or 23px */
+  line-height: 23px;
 }
 
 .p-base {
@@ -116,30 +116,32 @@
   @extend .p-base;
   font-style: normal;
   font-size: 15px;
-  line-height: 160%; /* identical to box height, or 24px */
+  line-height: 24px;
 }
 
 .p-s {
   @extend .p-base;
   font-style: italic;
   font-size: 12px;
-  line-height: 150%; /* identical to box height, or 18px */
+  line-height: 18px;
 }
 
 .p-mobile-menu {
   @extend .p-base;
   font-size: 32px;
-  line-height: 160%; /* or 51px */
+  line-height: 51px;
 }
 
 @media (max-width: 767px) {
   .h2 {
     font-size: 25px;
+    line-height: 32px;
     letter-spacing: 0.06em;
   }
-
+  
   .h3 {
     font-size: 25px;
+    line-height: 32px;
   }
 
   .h5 {
