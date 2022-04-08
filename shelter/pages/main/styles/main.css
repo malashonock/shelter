@@ -382,49 +382,49 @@ ul {
   font-family: "Georgia";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/georgia/georgia.ttf");
+  src: url("../../../assets/fonts/georgia/georgia.ttf");
 }
 @font-face {
   font-family: "Georgia";
   font-style: italic;
   font-weight: normal;
-  src: url("/assets/fonts/georgia/georgiai.ttf");
+  src: url("../../../assets/fonts/georgia/georgiai.ttf");
 }
 @font-face {
   font-family: "Georgia";
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/fonts/georgia/georgiab.ttf");
+  src: url("../../../assets/fonts/georgia/georgiab.ttf");
 }
 @font-face {
   font-family: "Georgia";
   font-style: italic;
   font-weight: bold;
-  src: url("/assets/fonts/georgia/georgiaz.ttf");
+  src: url("../../../assets/fonts/georgia/georgiaz.ttf");
 }
 @font-face {
   font-family: "Arial";
   font-style: normal;
   font-weight: normal;
-  src: url("/assets/fonts/arial/arial.ttf");
+  src: url("../../../assets/fonts/arial/arial.ttf");
 }
 @font-face {
   font-family: "Arial";
   font-style: italic;
   font-weight: normal;
-  src: url("/assets/fonts/arial/ariali.ttf");
+  src: url("../../../assets/fonts/arial/ariali.ttf");
 }
 @font-face {
   font-family: "Arial";
   font-style: normal;
   font-weight: bold;
-  src: url("/assets/fonts/arial/arialbd.ttf");
+  src: url("../../../assets/fonts/arial/arialbd.ttf");
 }
 @font-face {
   font-family: "Arial";
   font-style: italic;
   font-weight: bold;
-  src: url("/assets/fonts/arial/arialbi.ttf");
+  src: url("../../../assets/fonts/arial/arialbi.ttf");
 }
 .h-base, .slider__nav-button, .button, .h5, .h4, #donation .credit-card__number, .card__title, .h3, .h2, .h1, .logo__title {
   font-family: "Georgia", serif;
