@@ -950,7 +950,7 @@ html {
   justify-content: space-between;
   align-items: center;
 }
-.slider__wrapper {
+.slider__slides-wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -987,7 +987,7 @@ html {
   flex-direction: column;
   row-gap: 60px;
 }
-#our-friends .slider__wrapper {
+#our-friends .slider__slides {
   flex-wrap: wrap;
   row-gap: 30px;
 }
@@ -1009,7 +1009,7 @@ html {
     row-gap: 40px;
     /* Remove after embedding swiper.js */
   }
-  #our-friends .slider__wrapper {
+  #our-friends .slider__slides {
     max-width: 580px;
     row-gap: 30px;
   }
@@ -1030,7 +1030,7 @@ html {
     justify-content: center;
     row-gap: 42px;
   }
-  #our-friends .slider__wrapper {
+  #our-friends .slider__slides {
     flex: 1 1 100%;
     justify-content: center;
   }

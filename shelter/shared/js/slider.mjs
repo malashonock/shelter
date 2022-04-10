@@ -1,9 +1,10 @@
 export class Slider {
-  items = [];
+  #items = [];
 
   DOMMapping = {
     sliderSelector: ".slider",
-    itemsCollectionSelector: ".slider__wrapper",
+    sliderFrameSelector: ".slider__slides",
+    itemsCollectionClass: "slider__slides-wrapper",
     itemClass: "slider__slide",
     navBtnPrevSelector: ".slider__nav-button--prev",
     navBtnNextSelector: ".slider__nav-button--next",
@@ -19,10 +20,19 @@ export class Slider {
     this.itemsPerPageColumn = props.itemsPerPageColumn || 1;
     // this.isInfinite = props.isInfinite || false;
     this.DOMMapping = { ...this.DOMMapping, ...props.DOMMapping };
+
     this.appendItems();
-    this.buildDOM();
     this.bindEventHandlers();
     this.addEventListeners();
+  }
+
+  get items() {
+    return this.#items;
+  }
+
+  set items(value) {
+    this.#items = value;
+    this.renderDOM();
   }
 
   appendItems(itemsCount = this.itemsPerPage) {
@@ -49,14 +59,23 @@ export class Slider {
     this.items = this.items.slice(0, this.items.length - itemsCount);
   }
 
-  buildDOM() {
+  scrollTo(percentage) {
+    this.itemsCollectionElement.style.transform = `translateX(${percentage}%)`;
+  }
+
+  renderDOM() {
     this.sliderElement = document.querySelector(this.DOMMapping.sliderSelector);
 
-    this.itemsCollectionElement = this.sliderElement.querySelector(
-      this.DOMMapping.itemsCollectionSelector
+    this.sliderFrameElement = this.sliderElement.querySelector(
+      this.DOMMapping.sliderFrameSelector
     );
+    this.sliderFrameElement.style.overflowX = "hidden";
 
-    this.itemsCollectionElement.style.overflowX = "hidden";
+    this.itemsCollectionElement = document.createElement("div");
+    this.itemsCollectionElement.classList.add(
+      this.DOMMapping.itemsCollectionClass
+    );
+    this.itemsCollectionElement.style.transform = "translateX(0%)";
 
     const itemElements = this.items.map((item) => {
       const itemElement = new this.itemDOMGenerator(item);
@@ -67,6 +86,7 @@ export class Slider {
     });
 
     this.itemsCollectionElement.replaceChildren(...itemElements);
+    this.sliderFrameElement.replaceChildren(this.itemsCollectionElement);
 
     this.navBtnNextElement = this.sliderElement.querySelector(
       this.DOMMapping.navBtnNextSelector
@@ -92,14 +112,15 @@ export class Slider {
 
   nextPage() {
     this.appendItems();
+    this.scrollTo(-50);
     this.removeItemsFromHead();
-    this.buildDOM();
+    this.scrollTo(0);
   }
 
   prevPage() {
     this.prependItems();
+    this.scrollTo(0);
     this.removeItemsFromTail();
-    this.buildDOM();
   }
 
   addEventListeners() {

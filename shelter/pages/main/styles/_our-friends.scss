@@ -16,10 +16,13 @@
   }
 
   .slider {
-    &__wrapper {
+    &__slides {
       max-width: 1000px;
-      column-gap: 90px;
       padding: 5px;
+      
+      &-wrapper {
+        column-gap: 90px;
+      }
     }
   }
 }
@@ -27,9 +30,12 @@
 @media (max-width: 1279px) {
   #our-friends {
     .slider {
-      &__wrapper {
+      &__slides {
         max-width: 590px;
-        column-gap: 40px;
+
+        &-wrapper {
+          column-gap: 40px;
+        }
       }
     }
   }
@@ -48,10 +54,14 @@
       column-gap: 80px;
       margin-bottom: 5px;
 
-      &__wrapper {
+      &__slides {
         order: 1;
         max-width: 280px;
         justify-content: center;
+
+        &-wrapper {
+          column-gap: 40px;
+        }
       }
 
       &__nav-button {
