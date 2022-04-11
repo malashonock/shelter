@@ -26,6 +26,14 @@ export class Slider {
     this.addEventListeners();
   }
 
+  get itemsCount() {
+    return this.items.length;
+  }
+
+  get itemsPerPage() {
+    return this.itemsPerPageRow * this.itemsPerPageColumn;
+  }
+
   get items() {
     return this.#items;
   }
@@ -57,10 +65,6 @@ export class Slider {
 
   removeItemsFromTail(itemsCount = this.itemsPerPage) {
     this.items = this.items.slice(0, this.items.length - itemsCount);
-  }
-
-  scrollTo(percentage) {
-    this.itemsCollectionElement.style.transform = `translateX(${percentage}%)`;
   }
 
   renderDOM() {
@@ -97,12 +101,8 @@ export class Slider {
     );
   }
 
-  get itemsCount() {
-    return this.items.length;
-  }
-
-  get itemsPerPage() {
-    return this.itemsPerPageRow * this.itemsPerPageColumn;
+  scrollTo(percentage) {
+    this.itemsCollectionElement.style.transform = `translateX(${percentage}%)`;
   }
 
   bindEventHandlers() {

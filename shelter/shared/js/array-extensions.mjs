@@ -1,6 +1,6 @@
 /* Shuffle array extension method */
 export function shuffle() {
-  const array = this;
+  const array = [...this];
   let currentIndex = array.length;
   let randomIndex;
 

@@ -16,14 +16,20 @@
     color: $color-dark-l;
   }
 
-  /* Slider configuration */
   .slider {
     flex-direction: column;
     row-gap: 60px;
 
     &__slides {
-      flex-wrap: wrap;
-      row-gap: 30px;
+      width: 100%;
+      
+      &-wrapper {
+        height: 930px;
+        flex-direction: column;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        column-gap: 40px;
+      }
     }
 
     &__controls {
@@ -36,8 +42,6 @@
       @extend .button;
       @extend .button--primary;
       @extend .slider__nav-button;
-
-      
     }
   }
 }
@@ -49,19 +53,15 @@
       padding-bottom: 76px;
     }
 
-    /* Slider configuration */
     .slider {
       row-gap: 40px;
 
       &__slides {
-        max-width: 580px;
-        row-gap: 30px;
-      }
-
-      /* Remove after embedding swiper.js */
-      &__slide:nth-of-type(7),
-      &__slide:nth-of-type(8) {
-        display: none;
+        width: 580px;
+        
+        &-wrapper {
+          height: 1365px;
+        }
       }
     }
   }
@@ -74,21 +74,17 @@
       padding-bottom: 42px;
     }
 
-    /* Slider configuration */
     .slider {
-      /* Remove after embedding swiper.js */
       justify-content: center;
       row-gap: 42px;
 
       &__slides {
+        width: 270px;
         flex: 1 1 100%;
         justify-content: center;
-      }
 
-      &__slide:nth-of-type(4),
-      &__slide:nth-of-type(5),
-      &__slide:nth-of-type(6) {
-        display: none;
+        &-wrapper {
+        }
       }
 
       &__controls {
