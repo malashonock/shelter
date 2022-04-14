@@ -796,9 +796,9 @@ html {
 .card--interactive:hover {
   background-color: #ffffff;
   filter: drop-shadow(0 0 3px #cdcdcd);
-  transform: scale(0.98);
+  transform: scale(0.97);
   transition: all 0.2s ease;
-  transition-property: background-color, filter, scale;
+  transition-property: background-color, filter, transform;
 }
 .card--interactive:hover .button:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
@@ -995,7 +995,7 @@ html {
   width: 100%;
 }
 #our-friends .slider__slides-wrapper {
-  height: 930px;
+  height: 900px;
   flex-direction: column;
   flex-wrap: wrap;
   row-gap: 30px;
