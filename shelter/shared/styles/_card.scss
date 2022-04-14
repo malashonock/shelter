@@ -20,7 +20,8 @@
     &:hover {
       background-color: $color-light-xl;
       filter: drop-shadow(0 0 3px $color-dark-s);
-      @include smooth-transition(background-color, filter);
+      transform: scale(0.98);
+      @include smooth-transition(background-color, filter, scale);
 
       .button:not(:disabled):not(.slider__pagination) {
         background-color: $color-primary-light;

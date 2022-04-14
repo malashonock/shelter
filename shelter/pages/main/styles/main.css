@@ -517,6 +517,7 @@ html {
 
 .section {
   width: 100%;
+  overflow: visible;
 }
 .section__content {
   margin: 0 auto;
@@ -537,6 +538,7 @@ html {
   padding-top: 80px;
   padding-bottom: 100px;
   margin: 0 auto;
+  overflow: visible;
 }
 
 .transparent {
@@ -819,8 +821,9 @@ html {
 .card--interactive:hover {
   background-color: #ffffff;
   filter: drop-shadow(0 0 3px #cdcdcd);
+  transform: scale(0.98);
   transition: all 0.2s ease;
-  transition-property: background-color, filter;
+  transition-property: background-color, filter, scale;
 }
 .card--interactive:hover .button:not(:disabled):not(.slider__pagination) {
   background-color: #fddcc4;
@@ -980,15 +983,14 @@ html {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  row-gap: 55px;
+  row-gap: 60px;
 }
 #our-friends .title {
   text-align: center;
   color: #545454;
 }
 #our-friends .slider__slides {
-  max-width: 1000px;
-  padding: 5px;
+  max-width: 990px;
 }
 #our-friends .slider__slides-wrapper {
   -moz-column-gap: 90px;
@@ -997,7 +999,7 @@ html {
 
 @media (max-width: 1279px) {
   #our-friends .slider__slides {
-    max-width: 590px;
+    max-width: 580px;
   }
   #our-friends .slider__slides-wrapper {
     -moz-column-gap: 40px;
@@ -1006,19 +1008,19 @@ html {
 }
 @media (max-width: 767px) {
   #our-friends .content-wrapper {
-    row-gap: 37px;
+    row-gap: 42px;
   }
   #our-friends .slider {
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 15px;
+    row-gap: 20x;
     -moz-column-gap: 80px;
          column-gap: 80px;
     margin-bottom: 5px;
   }
   #our-friends .slider__slides {
     order: 1;
-    max-width: 280px;
+    max-width: 270px;
     justify-content: center;
   }
   #our-friends .slider__slides-wrapper {
