@@ -799,6 +799,12 @@ html {
   transition: all 0.2s ease;
   transition-property: background-color, filter;
 }
+.card--interactive:hover .button:not(:disabled):not(.slider__pagination) {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: all 0.2s ease;
+  transition-property: background-color, border-color;
+}
 .card__title {
   color: #545454;
 }

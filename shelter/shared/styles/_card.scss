@@ -21,6 +21,12 @@
       background-color: $color-light-xl;
       filter: drop-shadow(0 0 3px $color-dark-s);
       @include smooth-transition(background-color, filter);
+
+      .button:not(:disabled):not(.slider__pagination) {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+        @include smooth-transition(background-color, border-color);
+      }
     }
   }
 
