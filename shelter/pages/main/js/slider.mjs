@@ -1,7 +1,7 @@
 import { pets } from "../../../shared/js/load-pets.mjs";
 import { PetCard } from "../../../shared/js/pet-card.mjs";
 import { shuffle } from "../../../shared/js/array-extensions.mjs";
-import { Slider } from "../../../shared/js/slider.mjs";
+import { InfiniteSlider } from "../../../shared/js/infinite-slider.mjs";
 
 export let slider;
 
@@ -29,7 +29,7 @@ const breakpoints = [
 function getBreakPointChangedHandler(mediaQueryList, itemsPerPageRow) {
   return function () {
     if (mediaQueryList.matches) {
-      slider = new Slider({
+      slider = new InfiniteSlider({
         sourceItems: pets,
         itemsPerPageRow,
         itemDOMGenerator: PetCard,

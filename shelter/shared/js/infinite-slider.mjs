@@ -1,4 +1,4 @@
-export class Slider {
+export class InfiniteSlider {
   #items = [];
 
   DOMMapping = {
@@ -8,9 +8,6 @@ export class Slider {
     itemClass: "slider__slide",
     navBtnPrevSelector: ".slider__nav-button--prev",
     navBtnNextSelector: ".slider__nav-button--next",
-    // navBtnFirstSelector: ".slider__nav-button--first",
-    // navBtnLastSelector: ".slider__nav-button--last",
-    // paginationSelector: ".slider__pagination",
   };
 
   constructor(props) {
@@ -18,7 +15,6 @@ export class Slider {
     this.itemDOMGenerator = props.itemDOMGenerator;
     this.itemsPerPageRow = props.itemsPerPageRow || 1;
     this.itemsPerPageColumn = props.itemsPerPageColumn || 1;
-    // this.isInfinite = props.isInfinite || false;
     this.DOMMapping = { ...this.DOMMapping, ...props.DOMMapping };
 
     this.appendItems();
