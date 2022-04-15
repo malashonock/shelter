@@ -1011,7 +1011,7 @@ html {
   #our-friends .slider {
     flex-wrap: wrap;
     justify-content: center;
-    row-gap: 20x;
+    row-gap: 20px;
     -moz-column-gap: 80px;
          column-gap: 80px;
     margin-bottom: 5px;
