@@ -2,6 +2,7 @@ import { pets } from "../../../shared/js/load-pets.mjs";
 import { PetCard } from "../../../shared/js/pet-card.mjs";
 import { shuffle } from "../../../shared/js/array-extensions.mjs";
 import { PaginatedSlider } from "../../../shared/js/paginated-slider.mjs";
+import { Popup } from "../../../shared/js/popup.mjs";
 
 export let slider;
 

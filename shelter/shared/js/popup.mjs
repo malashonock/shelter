@@ -1,19 +1,29 @@
 export class Popup {
+  pet = {};
+  static overlay = document.querySelector(".overlay");
+
   constructor(props) {
     Object.assign(this.pet, props);
-    this.renderDOM();
+    this.popupElement = this.renderDOM();
   }
 
   renderDOM() {
-    const overlay = document.querySelector(".overlay");
-    overlay.classList.add("overlay--active");
+    Popup.overlay.classList.add("overlay--active");
+    Popup.overlay.addEventListener("click", (event) => this.destroy());
 
-    this.popupElement = document.createElement("div");
+    document.addEventListener("keyup", (event) => {
+      if (event.code === "Escape") this.destroy();
+    });
+
+    const root = document.querySelector("body");
+
+    const popupElement = document.createElement("div");
     popupElement.classList.add("popup");
+    root.append(popupElement);
 
     const imageWrapper = document.createElement("div");
     imageWrapper.classList.add("picture");
-    this.popupElement.append(imageWrapper);
+    popupElement.append(imageWrapper);
 
     const image = document.createElement("img");
     image.src = this.pet.img;
@@ -22,7 +32,7 @@ export class Popup {
 
     const textBlock = document.createElement("div");
     textBlock.classList.add("text-block");
-    this.popupElement.append(textBlock);
+    popupElement.append(textBlock);
 
     const title = document.createElement("h3");
     title.classList.add("text-block__title", "h3");
@@ -35,7 +45,7 @@ export class Popup {
     textBlock.append(subtitle);
 
     const description = document.createElement("p");
-    description.classList.add("text-block__text", "p-l");
+    description.classList.add("text-block__text", "h5");
     description.innerText = this.pet.description;
     textBlock.append(description);
 
@@ -44,31 +54,31 @@ export class Popup {
     textBlock.append(details);
 
     const age = document.createElement("li");
-    age.classList.add("list__item");
-    age.innerHTML = `<b>Age :</b> ${this.pet.age}`;
+    age.classList.add("list__item", "h5");
+    age.innerHTML = `<b>Age:</b> ${this.pet.age}`;
     details.append(age);
 
     const inoculations = document.createElement("li");
-    inoculations.classList.add("list__item");
-    inoculations.innerHTML = `<b>Inoculations :</b> ${this.pet.inoculations.join(
+    inoculations.classList.add("list__item", "h5");
+    inoculations.innerHTML = `<b>Inoculations:</b> ${this.pet.inoculations.join(
       ", "
     )}`;
     details.append(inoculations);
 
     const diseases = document.createElement("li");
-    diseases.classList.add("list__item");
-    diseases.innerHTML = `<b>Diseases :</b> ${this.pet.diseases.join(", ")}`;
+    diseases.classList.add("list__item", "h5");
+    diseases.innerHTML = `<b>Diseases:</b> ${this.pet.diseases.join(", ")}`;
     details.append(diseases);
 
     const parasites = document.createElement("li");
-    parasites.classList.add("list__item");
-    parasites.innerHTML = `<b>Parasites :</b> ${this.pet.parasites.join(", ")}`;
+    parasites.classList.add("list__item", "h5");
+    parasites.innerHTML = `<b>Parasites:</b> ${this.pet.parasites.join(", ")}`;
     details.append(parasites);
 
     const closeBtn = document.createElement("button");
     closeBtn.classList.add("button", "button--secondary", "button--close");
     closeBtn.addEventListener("click", (event) => this.destroy());
-    textBlock.append.closeBtn;
+    popupElement.append(closeBtn);
 
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -86,11 +96,12 @@ export class Popup {
     path.setAttribute("fill", "#292929");
     svg.append(path);
     closeBtn.append(svg);
+
+    return popupElement;
   }
 
   destroy() {
     this.popupElement.remove();
-    const overlay = document.querySelector(".overlay");
-    overlay.classList.remove("overlay--active");
+    Popup.overlay.classList.remove("overlay--active");
   }
 }

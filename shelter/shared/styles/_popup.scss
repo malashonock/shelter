@@ -1,0 +1,77 @@
+@use "vars" as *;
+
+.popup {
+  width: 900px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 3;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  
+  .picture {
+    height: 100%;
+    width: 500px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    overflow: hidden;
+
+    img {
+      // stretch image to hide ugly rounded corners
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+    }
+  }
+
+  .text-block {
+    flex-basis: 400px;
+    padding: 50px 20px 0 29px;
+
+    &__subtitle {
+      margin-top: 10px;
+    }
+
+    &__text {
+      margin-top: 40px;
+    }
+    
+    &__list {
+      margin-top: 40px;
+
+      .list__item {
+        padding-left: 14px;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+          width: 4px;
+          height: 4px;
+          background-color: $color-primary;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .button--close {
+    padding: 0;
+    width: 52px;
+    height: 52px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: absolute;
+    right: -42px;
+    top: -52px;
+  }
+}

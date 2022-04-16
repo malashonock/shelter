@@ -1,3 +1,5 @@
+import { Popup } from "./popup.mjs";
+
 export function PetCard(pet) {
   const card = document.createElement("div");
   card.classList.add("card", "card--interactive");
@@ -17,5 +19,10 @@ export function PetCard(pet) {
   button.innerText = "Learn more";
 
   card.append(...[image, title, button]);
+
+  card.addEventListener("click", (event) => {
+    const popup = new Popup(pet);
+  });
+
   return card;
 }
