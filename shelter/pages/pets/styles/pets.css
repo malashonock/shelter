@@ -360,6 +360,7 @@ img {
 }
 
 button {
+  outline: none;
   border-style: none;
   padding: 0;
 }
