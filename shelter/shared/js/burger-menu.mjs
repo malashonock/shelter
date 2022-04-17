@@ -41,3 +41,9 @@ menuLinks.forEach((link) => {
 overlay.addEventListener("click", (event) => {
   closeBurgerMenu();
 });
+
+document.addEventListener("keyup", (event) => {
+  if (event.code === "Escape") {
+    closeBurgerMenu();
+  }
+});
