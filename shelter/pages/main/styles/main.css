@@ -355,7 +355,7 @@ p {
 img {
   display: block;
   /* Remove margin from images */
-  width: 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 
@@ -1364,7 +1364,8 @@ html {
 }
 .popup .text-block {
   flex-basis: 400px;
-  padding: 50px 20px 0 29px;
+  padding: 50px 20px 50px 29px;
+  overflow: auto;
 }
 .popup .text-block__subtitle {
   margin-top: 10px;
@@ -1403,4 +1404,54 @@ html {
   position: absolute;
   right: -42px;
   top: -52px;
+}
+
+@media (max-width: 1279px) {
+  .popup {
+    width: 630px;
+    height: 350px;
+  }
+  .popup .picture {
+    width: 350px;
+  }
+  .popup .text-block {
+    flex-basis: 280px;
+    padding: 10px 9px 10px 11px;
+  }
+  .popup .text-block__text {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .popup .text-block__list {
+    margin-top: 20px;
+  }
+  .popup .text-block__list .list__item {
+    margin-bottom: 5px;
+  }
+}
+@media (max-width: 767px) {
+  .popup {
+    width: 240px;
+    height: auto;
+  }
+  .popup .picture {
+    display: none;
+  }
+  .popup .text-block {
+    padding: 10px;
+  }
+  .popup .text-block__title, .popup .text-block__subtitle {
+    text-align: center;
+  }
+  .popup .text-block__title {
+    font-size: 35px;
+    line-height: 45px;
+  }
+  .popup .text-block__text, .popup .text-block__list .list__item {
+    letter-spacing: 0.06em;
+  }
+  .popup .text-block__list {
+    margin-top: 24px;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -28,7 +28,8 @@
 
   .text-block {
     flex-basis: 400px;
-    padding: 50px 20px 0 29px;
+    padding: 50px 20px 50px 29px;
+    overflow: auto;
 
     &__subtitle {
       margin-top: 10px;
@@ -73,5 +74,69 @@
     position: absolute;
     right: -42px;
     top: -52px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .popup {
+    width: 630px;
+    height: 350px;
+
+    .picture {
+      width: 350px;
+    }
+
+    .text-block {
+      flex-basis: 280px;
+      padding: 10px 9px 10px 11px;
+
+      &__text {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 14px;
+      }
+      
+      &__list {
+        margin-top: 20px;
+
+        .list__item {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    width: 240px;
+    height: auto;
+
+    .picture {
+      display: none;
+    }
+
+    .text-block {
+      padding: 10px;
+
+      &__title,
+      &__subtitle {
+        text-align: center;
+      }
+
+      &__title {
+        font-size: 35px;
+        line-height: 45px;
+      }
+
+      &__text,
+      &__list .list__item {
+        letter-spacing: 0.06em;
+      }
+
+      &__list {
+        margin-top: 24px;
+      }
+    }
   }
 }

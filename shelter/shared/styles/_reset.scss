@@ -17,7 +17,7 @@ p {
 img {
   display: block; /* Remove margin from images */
   // fit size of containing div
-  width: 100%;
+  max-width: 100%;
   max-height: 100%;
 }
 
