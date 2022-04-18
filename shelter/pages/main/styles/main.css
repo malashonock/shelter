@@ -1019,7 +1019,6 @@ html {
     row-gap: 20px;
     -moz-column-gap: 80px;
          column-gap: 80px;
-    margin-bottom: 5px;
   }
   #our-friends .slider__slides {
     order: 1;
