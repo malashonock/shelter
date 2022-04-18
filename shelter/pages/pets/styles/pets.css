@@ -1208,4 +1208,7 @@ html {
   .popup .text-block__list {
     margin-top: 24px;
   }
+  .popup .button--close {
+    right: -30px;
+  }
 }/*# sourceMappingURL=pets.css.map */
