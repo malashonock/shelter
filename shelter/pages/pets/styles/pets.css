@@ -564,6 +564,10 @@ html {
   transition-property: opacity;
 }
 
+.position-relative {
+  position: relative;
+}
+
 @media (max-width: 1279px) {
   .section__content {
     max-width: 708px;
@@ -584,6 +588,12 @@ html {
   width: 30px;
   height: 22px;
   background-color: transparent;
+  transition: all 0.2s ease;
+  transition-property: transform;
+  position: absolute;
+  top: 49px;
+  right: 43px;
+  z-index: 4;
 }
 .burger-toggle__icon {
   display: block;
@@ -606,7 +616,11 @@ html {
   bottom: -10px;
 }
 .burger-toggle--open {
+  position: fixed;
+  right: 48px;
   transform: rotate(90deg);
+  transition: all 0.2s ease;
+  transition-property: transform, right;
 }
 
 .burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
@@ -724,6 +738,7 @@ html {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .navbar__burger {
   display: none;
@@ -766,6 +781,9 @@ html {
   }
 }
 #header {
+  position: static;
+}
+#header.position-relative {
   position: -webkit-sticky;
   position: sticky;
   top: 0;

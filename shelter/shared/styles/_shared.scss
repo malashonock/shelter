@@ -63,6 +63,10 @@ html {
   }
 }
 
+.position-relative {
+  position: relative;
+}
+
 @media (max-width: 1279px) {
   .section {
     &__content {
