@@ -543,7 +543,7 @@ html {
 .transparent {
   opacity: 0;
   transition: all 0.2s ease;
-  transition-property: opacity;
+  transition-property: opacity, transform;
 }
 
 .overlay {
@@ -584,6 +584,8 @@ html {
   width: 30px;
   height: 22px;
   background-color: transparent;
+  transition: all 0.2s ease;
+  transition-property: transform;
 }
 .burger-toggle__icon {
   display: block;
@@ -607,6 +609,8 @@ html {
 }
 .burger-toggle--open {
   transform: rotate(90deg);
+  transition: all 0.2s ease;
+  transition-property: transform;
 }
 
 .burger-toggle__icon, .burger-toggle__icon::before, .burger-toggle__icon::after {
@@ -765,7 +769,7 @@ html {
     display: none;
   }
 }
-#header {
+#header-section {
   position: -webkit-sticky;
   position: sticky;
   top: 0;

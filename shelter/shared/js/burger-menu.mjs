@@ -16,12 +16,18 @@ const openBurgerMenu = () => {
   mainHeader.classList.add("transparent");
   overlay.classList.add("overlay--active");
   burgerMenu.classList.add("burger-menu--open");
+  setTimeout(() => {
+    burgerToggleBurgerMenu.classList.add("burger-toggle--open");
+  }, 120);
 };
 
 const closeBurgerMenu = () => {
   overlay.classList.remove("overlay--active");
   mainHeader.classList.remove("transparent");
-  burgerMenu.classList.remove("burger-menu--open");
+  burgerToggleBurgerMenu.classList.remove("burger-toggle--open");
+  setTimeout(() => {
+    burgerMenu.classList.remove("burger-menu--open");
+  }, 120);
 };
 
 burgerToggleHeader.addEventListener("click", (event) => {

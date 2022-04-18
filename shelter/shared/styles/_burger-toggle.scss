@@ -5,6 +5,7 @@
   width: 30px;
   height: 22px;
   background-color: transparent;
+  @include smooth-transition(transform);
   
   &__icon {
     display: block;
@@ -36,6 +37,7 @@
 
   &--open {
     transform: rotate(90deg);
+    @include smooth-transition(transform);
   }
 }
 

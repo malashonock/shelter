@@ -43,7 +43,7 @@ html {
 
 .transparent {
   opacity: 0;
-  @include smooth-transition(opacity);
+  @include smooth-transition(opacity, transform);
 }
 
 .overlay {
