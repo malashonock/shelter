@@ -1,37 +1,35 @@
-export const burgerToggle = document.querySelector("#header .burger-toggle");
+export const burgerToggleHeader = document.querySelector(
+  "#header .burger-toggle"
+);
+
 export const burgerMenu = document.querySelector("#burger-menu");
+
+export const burgerToggleBurgerMenu =
+  burgerMenu.querySelector(".burger-toggle");
 
 const menuLinks = burgerMenu.querySelectorAll(".menu__link");
 
-const contentWrapper = burgerToggle.parentElement;
-const sectionWrapper = contentWrapper.parentElement;
-
-const headerContent = document.querySelector("#header > :not(.burger-toggle)");
-
+const mainHeader = document.querySelector("#header");
 const overlay = document.querySelector(".overlay");
 
-const toggleBurgerMenu = (state) => {
-  sectionWrapper.classList.toggle("position-relative", state);
-  contentWrapper.classList.toggle(
-    "position-relative",
-    state === undefined ? undefined : !state
-  );
-  overlay.classList.toggle("overlay--active", state);
-  headerContent.classList.toggle("transparent", state);
-  burgerToggle.classList.toggle("burger-toggle--open", state);
-  burgerMenu.classList.toggle("burger-menu--open", state);
-};
-
 const openBurgerMenu = () => {
-  toggleBurgerMenu(true);
+  mainHeader.classList.add("transparent");
+  overlay.classList.add("overlay--active");
+  burgerMenu.classList.add("burger-menu--open");
 };
 
 const closeBurgerMenu = () => {
-  toggleBurgerMenu(false);
+  overlay.classList.remove("overlay--active");
+  mainHeader.classList.remove("transparent");
+  burgerMenu.classList.remove("burger-menu--open");
 };
 
-burgerToggle.addEventListener("click", (event) => {
-  toggleBurgerMenu();
+burgerToggleHeader.addEventListener("click", (event) => {
+  openBurgerMenu();
+});
+
+burgerToggleBurgerMenu.addEventListener("click", (event) => {
+  closeBurgerMenu();
 });
 
 menuLinks.forEach((link) => {

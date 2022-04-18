@@ -5,11 +5,6 @@
   width: 30px;
   height: 22px;
   background-color: transparent;
-  @include smooth-transition(transform);
-  position: absolute;
-  top: 49px;
-  right: 43px;
-  z-index: 4;
   
   &__icon {
     display: block;
@@ -40,10 +35,7 @@
   }
 
   &--open {
-    position: fixed;
-    right: 48px;
     transform: rotate(90deg);
-    @include smooth-transition(transform, right);
   }
 }
 
