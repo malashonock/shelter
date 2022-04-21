@@ -17,6 +17,7 @@ export class PaginatedSlider {
   constructor(props) {
     this.sourceItems = props.sourceItems;
     this.itemDOMGenerator = props.itemDOMGenerator;
+    this.areItemsEqual = props.areItemsEqual;
     this.itemsPerPageRow = props.itemsPerPageRow || 1;
     this.itemsPerPageColumn = props.itemsPerPageColumn || 1;
     this.pageCount = props.pageCount || this.sourceItems.length;
@@ -84,6 +85,14 @@ export class PaginatedSlider {
     const targetItemsCount =
       this.pageCount * this.itemsPerPageRow * this.itemsPerPageColumn;
 
+    const countItems = (itemToCount) =>
+      this.#items
+        .map((item) => (this.areItemsEqual(itemToCount, item) ? 1 : 0))
+        .reduce((prev, curr) => prev + curr, 0);
+
+    const maxItemCount = targetItemsCount / this.sourceItems.length;
+
+    let sourceItems = [...this.sourceItems];
     let availableItems = this.sourceItems.shuffle();
 
     while (this.#items.length < targetItemsCount) {
@@ -91,10 +100,24 @@ export class PaginatedSlider {
         availableItems.length === 0 ||
         this.#items.length % this.itemsPerPage === 0
       ) {
-        availableItems = this.sourceItems.shuffle();
+        availableItems = sourceItems.shuffle().sort((item1, item2) => {
+          const itemCount1 = countItems(item1);
+          const itemCount2 = countItems(item2);
+          return itemCount1 - itemCount2;
+        });
       }
 
-      this.#items.push(availableItems.pop());
+      const newItem = availableItems.shift();
+      this.#items.push(newItem);
+
+      // Once an item count reaches page count, exclude such item from further population
+      const itemCount = countItems(newItem);
+
+      if (itemCount === maxItemCount) {
+        sourceItems = sourceItems.filter(
+          (item) => !this.areItemsEqual(newItem, item)
+        );
+      }
     }
   }
 

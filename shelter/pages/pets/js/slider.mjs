@@ -59,6 +59,7 @@ function getBreakPointChangedHandler(
         columnGapPx,
         itemWidthPx,
         itemDOMGenerator: PetCard,
+        areItemsEqual: (pet1, pet2) => pet1.name === pet2.name,
       });
     }
   };
