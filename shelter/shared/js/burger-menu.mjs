@@ -1,3 +1,5 @@
+import { overlay } from "../../shared/js/overlay.js";
+
 export const burgerToggleHeader = document.querySelector(
   "#header .burger-toggle"
 );
@@ -10,11 +12,10 @@ export const burgerToggleBurgerMenu =
 const menuLinks = burgerMenu.querySelectorAll(".menu__link");
 
 const mainHeader = document.querySelector("#header");
-const overlay = document.querySelector(".overlay");
 
 const openBurgerMenu = () => {
   mainHeader.classList.add("transparent");
-  overlay.classList.add("overlay--active");
+  overlay.show();
   burgerMenu.classList.add("burger-menu--open");
   setTimeout(() => {
     burgerToggleBurgerMenu.classList.add("burger-toggle--open");
@@ -22,7 +23,7 @@ const openBurgerMenu = () => {
 };
 
 const closeBurgerMenu = () => {
-  overlay.classList.remove("overlay--active");
+  overlay.hide();
   mainHeader.classList.remove("transparent");
   burgerToggleBurgerMenu.classList.remove("burger-toggle--open");
   setTimeout(() => {
@@ -44,7 +45,7 @@ menuLinks.forEach((link) => {
   });
 });
 
-overlay.addEventListener("click", (event) => {
+overlay.element.addEventListener("click", (event) => {
   closeBurgerMenu();
 });
 

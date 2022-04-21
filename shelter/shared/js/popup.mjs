@@ -1,6 +1,7 @@
+import { overlay } from "../../shared/js/overlay.js";
+
 export class Popup {
   pet = {};
-  static overlay = document.querySelector(".overlay");
 
   constructor(props) {
     Object.assign(this.pet, props);
@@ -8,8 +9,8 @@ export class Popup {
   }
 
   renderDOM() {
-    Popup.overlay.classList.add("overlay--active");
-    Popup.overlay.addEventListener("click", (event) => this.destroy());
+    overlay.show();
+    overlay.element.addEventListener("click", (event) => this.destroy());
 
     document.addEventListener("keyup", (event) => {
       if (event.code === "Escape") this.destroy();
@@ -102,6 +103,6 @@ export class Popup {
 
   destroy() {
     this.popupElement.remove();
-    Popup.overlay.classList.remove("overlay--active");
+    overlay.hide();
   }
 }

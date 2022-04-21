@@ -546,6 +546,10 @@ html {
   transition-property: opacity, transform;
 }
 
+body.vscroll-disabled {
+  overflow-y: hidden;
+}
+
 .overlay {
   position: fixed;
   width: 100vw;
