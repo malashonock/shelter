@@ -1459,6 +1459,9 @@ body.vscroll-disabled {
   .popup .text-block__text, .popup .text-block__list .list__item {
     letter-spacing: 0.06em;
   }
+  .popup .text-block__text {
+    text-align: justify;
+  }
   .popup .text-block__list {
     margin-top: 24px;
   }
