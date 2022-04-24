@@ -1162,6 +1162,13 @@ body.vscroll-disabled {
   position: absolute;
   right: -42px;
   top: -52px;
+  /* Highlight close button on mouse over overlay */
+}
+.overlay:hover ~ .popup .button--close {
+  background-color: #fddcc4;
+  border-color: #fddcc4;
+  transition: all 0.2s ease;
+  transition-property: background-color, border-color;
 }
 
 @media (max-width: 1279px) {
