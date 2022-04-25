@@ -35,14 +35,13 @@ burgerToggleHeader.addEventListener("click", (event) => {
   openBurgerMenu();
 });
 
-burgerToggleBurgerMenu.addEventListener("click", (event) => {
-  closeBurgerMenu();
-});
-
-menuLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
+burgerMenu.addEventListener("click", (event) => {
+  if (
+    event.target.matches(".burger-toggle") ||
+    event.target.matches(".menu__link")
+  ) {
     closeBurgerMenu();
-  });
+  }
 });
 
 overlay.element.addEventListener("click", (event) => {
