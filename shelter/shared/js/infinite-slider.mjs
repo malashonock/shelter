@@ -1,5 +1,7 @@
 export class InfiniteSlider {
-  #items = [];
+  #itemsMain = [];
+  #itemsLeft = [];
+  #itemsRight = [];
 
   DOMMapping = {
     sliderSelector: ".slider",
@@ -17,13 +19,11 @@ export class InfiniteSlider {
     this.itemsPerPageColumn = props.itemsPerPageColumn || 1;
     this.DOMMapping = { ...this.DOMMapping, ...props.DOMMapping };
 
-    this.appendItems();
-    this.bindEventHandlers();
-    this.addEventListeners();
-  }
+    this.populateMain();
+    this.populateLeft();
+    this.populateRight();
 
-  get itemsCount() {
-    return this.items.length;
+    this.renderDOM();
   }
 
   get itemsPerPage() {
@@ -31,36 +31,39 @@ export class InfiniteSlider {
   }
 
   get items() {
-    return this.#items;
+    return [...this.#itemsLeft, ...this.#itemsMain, ...this.#itemsRight];
   }
 
-  set items(value) {
-    this.#items = value;
+  set items([newItemsLeft, newItemsMain, newItemsRight]) {
+    this.#itemsLeft = [...newItemsLeft];
+    this.#itemsMain = [...newItemsMain];
+    this.#itemsRight = [...newItemsRight];
     this.renderDOM();
   }
 
-  appendItems(itemsCount = this.itemsPerPage) {
-    const availableItems = this.sourceItems
-      .filter((item) => !this.items.includes(item))
-      .shuffle();
-
-    this.items = [...this.items, ...availableItems.slice(0, itemsCount)];
+  generateItems(itemsCount = this.itemsPerPage) {
+    return this.sourceItems
+      .filter((item) => !this.#itemsMain.includes(item))
+      .shuffle()
+      .slice(0, itemsCount);
   }
 
-  prependItems(itemsCount = this.itemsPerPage) {
-    const availableItems = this.sourceItems
-      .filter((item) => !this.items.includes(item))
-      .shuffle();
-
-    this.items = [...availableItems.slice(0, itemsCount), ...this.items];
+  populateMain(itemsCount = this.itemsPerPage) {
+    const newItems = this.generateItems(itemsCount);
+    this.#itemsMain.push(...newItems);
+    return newItems;
   }
 
-  removeItemsFromHead(itemsCount = this.itemsPerPage) {
-    this.items = this.items.slice(itemsCount);
+  populateLeft(itemsCount = this.itemsPerPage) {
+    const newItems = this.generateItems(itemsCount);
+    this.#itemsLeft.push(...newItems);
+    return newItems;
   }
 
-  removeItemsFromTail(itemsCount = this.itemsPerPage) {
-    this.items = this.items.slice(0, this.items.length - itemsCount);
+  populateRight(itemsCount = this.itemsPerPage) {
+    const newItems = this.generateItems(itemsCount);
+    this.#itemsRight.push(...newItems);
+    return newItems;
   }
 
   renderDOM() {
@@ -75,15 +78,8 @@ export class InfiniteSlider {
     this.itemsCollectionElement.classList.add(
       this.DOMMapping.itemsCollectionClass
     );
-    this.itemsCollectionElement.style.transform = "translateX(0%)";
 
-    const itemElements = this.items.map((item) => {
-      const itemElement = new this.itemDOMGenerator(item);
-      itemElement.classList.add(this.DOMMapping.itemClass);
-      itemElement.style.flexGrow = "0";
-      itemElement.style.flexShrink = "0";
-      return itemElement;
-    });
+    const itemElements = this.items.map((item) => this.createItemElement(item));
 
     this.itemsCollectionElement.replaceChildren(...itemElements);
     this.sliderFrameElement.replaceChildren(this.itemsCollectionElement);
@@ -95,28 +91,46 @@ export class InfiniteSlider {
     this.navBtnPrevElement = this.sliderElement.querySelector(
       this.DOMMapping.navBtnPrevSelector
     );
+
+    this.addEventListeners();
   }
 
-  scrollTo(percentage) {
-    this.itemsCollectionElement.style.transform = `translateX(${percentage}%)`;
-  }
-
-  bindEventHandlers() {
-    this.nextPage = this.nextPage.bind(this);
-    this.prevPage = this.prevPage.bind(this);
+  createItemElement(item) {
+    const itemElement = new this.itemDOMGenerator(item);
+    itemElement.classList.add(this.DOMMapping.itemClass);
+    itemElement.style.flexGrow = "0";
+    itemElement.style.flexShrink = "0";
+    return itemElement;
   }
 
   nextPage() {
-    this.appendItems();
-    this.scrollTo(-50);
-    this.removeItemsFromHead();
-    this.scrollTo(0);
+    this.itemsCollectionElement.classList.add("move-right");
+  }
+
+  recreateItemsAfterNextPage() {
+    const itemsToKeep = [...this.#itemsRight];
+
+    this.#itemsMain = [...itemsToKeep];
+
+    const newItemsLeft = this.populateLeft();
+    const newItemsRight = this.populateRight();
+
+    this.items = [newItemsLeft, itemsToKeep, newItemsRight];
   }
 
   prevPage() {
-    this.prependItems();
-    this.scrollTo(0);
-    this.removeItemsFromTail();
+    this.itemsCollectionElement.classList.add("move-left");
+  }
+
+  recreateItemsAfterPrevPage() {
+    const itemsToKeep = [...this.#itemsLeft];
+
+    this.#itemsMain = [...itemsToKeep];
+
+    const newItemsLeft = this.populateLeft();
+    const newItemsRight = this.populateRight();
+
+    this.items = [newItemsLeft, itemsToKeep, newItemsRight];
   }
 
   addEventListeners() {
@@ -126,6 +140,21 @@ export class InfiniteSlider {
 
     this.navBtnPrevElement.addEventListener("click", (event) => {
       this.prevPage();
+    });
+
+    this.itemsCollectionElement.addEventListener("animationend", (event) => {
+      switch (event.animationName) {
+        case "move-right":
+          this.itemsCollectionElement.classList.remove("move-right");
+          this.recreateItemsAfterNextPage();
+          break;
+        case "move-left":
+          this.itemsCollectionElement.classList.remove("move-left");
+          this.recreateItemsAfterPrevPage();
+          break;
+        default:
+          break;
+      }
     });
   }
 }
