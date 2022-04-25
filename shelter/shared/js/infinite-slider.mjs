@@ -50,19 +50,19 @@ export class InfiniteSlider {
 
   populateMain(itemsCount = this.itemsPerPage) {
     const newItems = this.generateItems(itemsCount);
-    this.#itemsMain.push(...newItems);
+    this.#itemsMain = [...newItems];
     return newItems;
   }
 
   populateLeft(itemsCount = this.itemsPerPage) {
     const newItems = this.generateItems(itemsCount);
-    this.#itemsLeft.push(...newItems);
+    this.#itemsLeft = [...newItems];
     return newItems;
   }
 
   populateRight(itemsCount = this.itemsPerPage) {
     const newItems = this.generateItems(itemsCount);
-    this.#itemsRight.push(...newItems);
+    this.#itemsRight = [...newItems];
     return newItems;
   }
 
