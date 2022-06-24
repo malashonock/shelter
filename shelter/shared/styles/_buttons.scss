@@ -1,0 +1,37 @@
+@use "vars" as *;
+
+.button {
+  padding: 15px 45px;
+  border-radius: 100px;
+  color: $color-dark-3xl;
+  @include smooth-transition(background-color, border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  &--primary {
+    background-color: $color-primary;
+  }
+
+  &--secondary {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    padding: 13px 43px; /* paddings reduced by border-width */
+  }
+
+  &:hover:not(:disabled):not(.slider__pagination) {
+    background-color: $color-primary-light;
+    border-color: $color-primary-light;
+    @include smooth-transition(background-color, border-color);
+  }
+
+  &:disabled {
+    border-color: $color-dark-s;
+    color: $color-dark-s;
+    color: $color-dark-s;
+
+    svg path {
+      fill: $color-dark-s;
+    }
+  }
+}

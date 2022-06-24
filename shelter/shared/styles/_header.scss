@@ -1,0 +1,72 @@
+@use "shared";
+@use "vars" as *;
+@use "burger-toggle";
+@use "logo";
+@use "menu";
+
+#header {
+  @include smooth-transition(opacity); /* Fade-in smoothly when burger menu is closed */
+}
+
+.navbar {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-sizing: content-box;
+  height: 60px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  
+  &__burger {
+    display: none;
+  }
+
+  &__menu {
+    align-self: flex-start;
+    margin-top: 16px;
+  }
+}
+
+.menu {
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 35px;
+  
+  &__link {
+    @extend .p-l;
+    letter-spacing: 0.05px;
+  }
+}
+
+// Dark theme
+.section--dark {
+  .navbar {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .section--dark {
+    .navbar {
+      padding-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar {
+    justify-content: flex-start;
+
+    &__burger {
+      display: block;
+      margin: 0 auto;
+    }
+
+    &__menu {
+      display: none;
+    }
+  }
+}

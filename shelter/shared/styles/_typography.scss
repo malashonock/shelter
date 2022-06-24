@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../../assets/fonts/georgia/georgia.ttf");
+}
+
+@font-face {
+  font-family: "Georgia";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../../../assets/fonts/georgia/georgiai.ttf");
+}
+
+@font-face {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../../../assets/fonts/georgia/georgiab.ttf");
+}
+
+@font-face {
+  font-family: "Georgia";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../../../assets/fonts/georgia/georgiaz.ttf");
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../../../assets/fonts/arial/arial.ttf");
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../../../assets/fonts/arial/ariali.ttf");
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../../../assets/fonts/arial/arialbd.ttf");
+}
+
+@font-face {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../../../assets/fonts/arial/arialbi.ttf");
+}
+
+.h-base {
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+}
+
+.h1 {
+  @extend .h-base;
+  font-size: 32px;
+  line-height: 35px;
+}
+
+.h2 {
+  @extend .h-base;
+  font-size: 44px;
+  line-height: 57px;
+  letter-spacing: 0;
+}
+
+.h3 {
+  @extend .h-base;
+  font-size: 35px;
+  line-height: 45px;
+}
+
+.h4 {
+  @extend .h-base;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.h5 {
+  @extend .h-base;
+  font-size: 15px;
+  line-height: 17px;
+}
+
+.button {
+  @extend .h-base;
+  font-size: 17px;
+  line-height: 22px;
+}
+
+.slider__nav-button {
+  // Had to repeat the .h4 style
+  // @extend .h4 was not applied due to specifity issues
+  // .button was applied instead
+  @extend .h-base;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.p-base {
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+.p-l {
+  @extend .p-base;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.p-s {
+  @extend .p-base;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.p-mobile-menu {
+  @extend .p-base;
+  font-size: 32px;
+  line-height: 51px;
+}
+
+@media (max-width: 767px) {
+  .h2 {
+    font-size: 25px;
+    line-height: 32px;
+    letter-spacing: 0.06em;
+  }
+  
+  .h3 {
+    font-size: 25px;
+    line-height: 32px;
+  }
+
+  .h5 {
+    letter-spacing: 0;
+  }
+}

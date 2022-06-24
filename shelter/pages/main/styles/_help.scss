@@ -1,0 +1,74 @@
+@use "../../../shared/styles/vars" as *;
+
+#help {
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 60px;
+  }
+
+  .title {
+    color: $color-dark-l;
+    text-align: center;
+  }
+
+  .help-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    row-gap: 55px;
+    column-gap: 120px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    height: 113px;
+    width: max-content;
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+@media (max-width: 1279px) {
+  #help {
+    .help-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 60px;
+    }
+
+    .card {
+      width: 170px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #help {
+    .content-wrapper {
+      row-gap: 42px;
+    }
+
+    .help-list {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      column-gap: 30px;
+    }
+
+    .card {
+      width: 130px;
+      height: 87px;
+
+      &__title {
+        font-size: 15px;
+        line-height: 17px;
+      }
+
+      &__img {
+        height: 50px;
+      }
+    }
+  }
+}

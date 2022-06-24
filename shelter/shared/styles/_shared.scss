@@ -1,0 +1,89 @@
+@use "reset";
+@use "typography";
+@use "vars" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.button:not(:disabled) {
+  cursor: pointer;
+}
+
+.section {
+  width: 100%;
+
+  &__content {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+  }
+
+  &--light {
+    background-color: $color-light-xl;
+  }
+
+  &--shaded {
+    background-color: $color-light-l;
+  }
+
+  &--dark {
+    background: url("../../../assets/images/noise_transparent@2x.png"),
+      radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #211f20;
+  }
+}
+
+.content-wrapper {
+  padding-top: 80px;
+  padding-bottom: 100px;
+  margin: 0 auto;
+}
+
+.transparent {
+  opacity: 0;
+  @include smooth-transition(opacity, transform);
+}
+
+body.vscroll-disabled {
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  background-color: $color-dark-3xl;
+  opacity: 0;
+  @include smooth-transition(opacity);
+  
+  &--active {
+    pointer-events: auto;
+    opacity: 0.6;
+    @include smooth-transition(opacity);
+  }
+}
+
+@media (max-width: 1279px) {
+  .section {
+    &__content {
+      max-width: 708px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    &__content {
+      max-width: 300px;
+    }
+  }
+
+  .content-wrapper {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+}

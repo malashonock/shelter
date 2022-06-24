@@ -1,0 +1,66 @@
+@use "../../../shared/styles/vars" as *;
+
+#not-only {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .text-block {
+    margin-top: 163px;
+    max-width: 460px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 42px;
+
+    &__title {
+      color: $color-light-xl;
+    }
+
+    &__text {
+      color: $color-dark-s;
+    }
+  }
+
+  .picture {
+    max-width: 698px;
+  }
+}
+
+@media (max-width: 1279px) {
+  #not-only {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .text-block {
+      margin-top: 0;
+
+      .button {
+        align-self: center;
+      }
+    }
+
+    .picture {
+      align-self: flex-end;
+      margin-top: 100px;
+      max-width: 569px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #not-only {
+    .text-block {
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .picture {
+      margin-top: 105px;
+      max-width: 260px;
+    }
+  }
+}

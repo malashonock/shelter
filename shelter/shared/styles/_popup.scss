@@ -1,0 +1,158 @@
+@use "vars" as *;
+@use "buttons";
+
+.popup {
+  width: 900px;
+  height: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  z-index: 3;
+  background-color: $color-light-s;
+  border-radius: 9px;
+  
+  .picture {
+    height: 100%;
+    width: 500px;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    overflow: hidden;
+
+    img {
+      // stretch image to hide ugly rounded corners
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+    }
+  }
+
+  .text-block {
+    flex-basis: 400px;
+    padding: 50px 20px 50px 29px;
+    overflow: auto;
+
+    &__subtitle {
+      margin-top: 10px;
+    }
+
+    &__text {
+      margin-top: 40px;
+    }
+    
+    &__list {
+      margin-top: 40px;
+
+      .list__item {
+        padding-left: 14px;
+        margin-bottom: 10px;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(0, -50%);
+          width: 4px;
+          height: 4px;
+          background-color: $color-primary;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+
+  .button--close {
+    padding: 0;
+    width: 52px;
+    height: 52px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: absolute;
+    right: -42px;
+    top: -52px;
+
+    /* Highlight close button on mouse over overlay */
+    .overlay:hover ~ & {
+      background-color: $color-primary-light;
+      border-color: $color-primary-light;
+      @include smooth-transition(background-color, border-color);
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  .popup {
+    width: 630px;
+    height: 350px;
+
+    .picture {
+      width: 350px;
+    }
+
+    .text-block {
+      flex-basis: 280px;
+      padding: 10px 9px 10px 11px;
+
+      &__text {
+        margin-top: 20px;
+        font-size: 13px;
+        line-height: 14px;
+      }
+      
+      &__list {
+        margin-top: 20px;
+
+        .list__item {
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .popup {
+    width: 240px;
+    height: auto;
+
+    .picture {
+      display: none;
+    }
+
+    .text-block {
+      padding: 10px;
+
+      &__title,
+      &__subtitle {
+        text-align: center;
+      }
+
+      &__title {
+        font-size: 35px;
+        line-height: 45px;
+      }
+
+      &__text,
+      &__list .list__item {
+        letter-spacing: 0.06em;
+      }
+
+      &__text {
+        text-align: justify;
+      }
+
+      &__list {
+        margin-top: 24px;
+      }
+    }
+
+    .button--close {
+      right: -30px;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+@use "../../../shared/styles/vars" as *;
+@use "../../../shared/styles/typography";
+
+#donation {
+  .content-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 30px;
+    max-width: 915px;
+  }
+
+  .picture {
+    min-width: 505px;
+  }
+
+  .text-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    row-gap: 20px;
+
+    &__title,
+    &__subtitle {
+      color: $color-dark-l;
+    }
+
+    &__subtitle {
+      line-height: 17px;
+    }
+
+    &__text {
+      color: $color-dark-m;
+    }
+  }
+
+  .credit-card {
+    background-color: $color-primary;
+    @include smooth-transition(background-color);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 9px;
+    column-gap: 15px;
+
+    &:hover {
+      background-color: $color-primary-light;
+      @include smooth-transition(background-color);
+    }
+
+    &__number {
+      @extend .h4;
+      color: $color-dark-l;
+    }
+  }
+}
+
+@media (max-width: 1279px) {
+  #donation {
+    .content-wrapper {
+      max-width: 505px;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      column-gap: 0;
+      row-gap: 60px;
+
+      .text-block {
+        max-width: 380px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  #donation {
+    .content-wrapper {
+      max-width: 100%;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+      column-gap: 0;
+      row-gap: 42px;
+
+      .text-block {
+        padding: 0 10px;
+        align-items: center;
+        row-gap: 20px;
+
+        &__title,
+        &__subtitle {
+          text-align: center;
+        }
+
+        &__subtitle {
+          line-height: 24px;
+        }
+
+        &__text {
+          text-align: justify;
+        }
+      }
+    }
+
+    .credit-card {
+      max-width: 100%;
+      column-gap: 14px;
+
+      &__number {
+        font-size: 15px;
+        line-height: 17px;
+      }
+    }
+
+    .picture {
+      min-width: auto;
+      max-width: 260px;
+    }
+  }
+}

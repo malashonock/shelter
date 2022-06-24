@@ -1,0 +1,38 @@
+@use "vars" as *;
+@use "typography";
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 270px;
+  height: 435px;
+  padding-bottom: 30px;
+  border-radius: 9px;
+  background-color: $color-light-s;
+  @include smooth-transition(background-color);
+
+  &--interactive {
+    cursor: pointer;
+    @include smooth-transition(background-color, filter);
+
+    &:hover {
+      background-color: $color-light-xl;
+      filter: drop-shadow(0 0 3px $color-dark-s);
+      transform: scale(0.97);
+      @include smooth-transition(background-color, filter, transform);
+
+      .button:not(:disabled):not(.slider__pagination) {
+        background-color: $color-primary-light;
+        border-color: $color-primary-light;
+        @include smooth-transition(background-color, border-color);
+      }
+    }
+  }
+
+  &__title {
+    @extend .h4;
+    color: $color-dark-l;
+  }
+}
